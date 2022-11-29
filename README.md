@@ -8,7 +8,9 @@
  <h1 align=center>Wonderlanders</h1>
  <h3 align=center>
  A stylish website for travellers built with Django and Python.<br>
-Final project for the Web Framework Course in Software University.
+Final project for the Web Framework Course in Software University.<br>
+
+Demo is on: <a>https://wonderlanders.tk</a>
 </h3>
 	
 [About](#about) | [Installation](#installation) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
