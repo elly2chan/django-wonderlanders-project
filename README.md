@@ -11,10 +11,11 @@
 Final project for the Web Framework Course in Software University.<br>
 <br>
 	 <a href='https://wonderlanders.tk'> To see the demo click here </a>
-</h3>
 	
 [About](#about) | [Installation](#installation) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
 
+</h3>
+	 
 </div>
 
  <a href="#">
