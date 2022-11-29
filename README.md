@@ -9,8 +9,8 @@
  <h3 align=center>
  A stylish website for travellers built with Django and Python.<br>
 Final project for the Web Framework Course in Software University.<br>
-
-Demo is on: <a>https://wonderlanders.tk</a>
+<br>
+You can see the demo here -> <a>https://wonderlanders.tk</a>
 </h3>
 	
 [About](#about) | [Installation](#installation) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
@@ -119,10 +119,10 @@ cloudinary.config(
 - [x] Make sure the role management is secured and error-safe
 - [x] When validating data, show appropriate messages to the user
 - [x] Security (prevent SQL injection, XSS, CSRF, parameter tampering, etc)
-- [ ] Write tests (Unit & Integration) for your views/models/forms - at least 10 test
+- [x] Write tests (Unit & Integration) for your views/models/forms - at least 10 test
 - [ ] Writing asynchronous view/s somewhere in the project
 - [ ] Extend your Django project with REST Capabilities
-- [ ] Host the application in a cloud environment
+- [x] Host the application in a cloud environment
 - [ ] Extend Django User
 
 <!-- Credits -->
