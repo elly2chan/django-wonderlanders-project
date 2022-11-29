@@ -7,18 +7,19 @@
                 <h1 class="font-weight-bold title">All posts from {{ category.title }}</h1>
                 <nav class="navbar navbar-expand-lg navbar-light bg-white pl-2 pr-2">
                     <div class="collapse navbar-collapse" id="navbarsExplore">
-                        <ul class="navbar-nav">
+                        {% if categories and posts %}
+                            <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'index' %}">All</a>
                             </li>
-                            {% if categories and posts %}
-                                {% for category in categories %}
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="{% url 'post category' slug=category.slug %}">{{ category.title }}</a>
-                                    </li>
-                                {% endfor %}
-                            {% endif %}
+                            {% for category in categories %}
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       href="{% url 'post category' slug=category.slug %}">{{ category.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
                         </ul>
                     </div>
                 </nav>
