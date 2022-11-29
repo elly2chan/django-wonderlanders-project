@@ -21,12 +21,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'index' %}">All</a>
                         </li>
-                        {% for category in categories %}
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                   href="{% url 'post category' slug=category.slug %}">{{ category.title }}</a>
-                            </li>
-                        {% endfor %}
+                        {% if categories and posts %}
+                            {% for category in categories %}
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       href="{% url 'post category' slug=category.slug %}">{{ category.title }}</a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
