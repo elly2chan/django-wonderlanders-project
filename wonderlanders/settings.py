@@ -5,7 +5,7 @@ import cloudinary
 from dotenv import dotenv_values
 from django.urls import reverse_lazy
 
-config = dotenv_values('envs/.env')
+config = dotenv_values('envs/.env.prod')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -113,9 +113,9 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
 
-MEDIA_URL = 'media/'
+STATIC_ROOT = '/tmp/wonderlanders/staticfiles'
 
-# MEDIA_ROOT = BASE_DIR / 'mediafiles'
+MEDIA_URL = 'media/'
 
 cloudinary.config(
     cloud_name=config['CLOUD_NAME'],
