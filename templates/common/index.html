@@ -3,7 +3,7 @@
 {% load cache %}
 
 {% block page_content %}
-    {% cache 360 index %}
+{#    {% cache 360 index %}#}
         <section class="mt-4 mb-5">
             <div class="container">
                 {% if posts %}
@@ -63,5 +63,5 @@
                 {% endblock %}
             </div>
         </section>
-    {% endcache %}
+{#    {% endcache %}#}
 {% endblock %}
