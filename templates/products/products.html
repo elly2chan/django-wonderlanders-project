@@ -5,7 +5,9 @@
     <div class="container">
         <div class="container mb-5" align="center">
             <br>
-            <h1 class="font-weight-bold title">Travel Gifts</h1>
+            {% if products %}
+                <h1 class="font-weight-bold title">Travel Gifts</h1>
+            {% endif %}
             {% if user.is_authenticated and user.is_staff %}
                 <a href="{% url 'add product' %}" style="color: white">
                     <button class="btn btn-secondary">
@@ -62,8 +64,9 @@
                 <br>
             {% endfor %}
         {% else %}
+            <h1>Coming soon</h1>
             <br><br><br>
-            <img style="margin-right: 40px" src="{% static 'img/coming-soon.png' %}" width=600px height=200px
+            <img src="{% static 'img/gifts.webp' %}" width=600px height=300px
                  alt="">
             <br><br><br>
         {% endif %}
