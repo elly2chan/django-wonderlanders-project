@@ -33,7 +33,7 @@ git clone https://github.com/elly2chan/wonderlanders-django-project
 ```bash
 pip install -r requirements.txt
 ```
-***Note: If you are on a Mac, change "psycopg2" to "psycopg2-binary" in requirements.txt!***
+***Note: If you are on a Mac, change "psycopg2" to "psycopg2-binary" in requirements.txt before running the command above!***
 
 ## In order to use the app, you should change the following in settings.py:
 
