@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block page_content %}
+    {% cache 360 products %}
+        <div class="container">
+            <div class="container mb-5" align="center">
+                <br>
+                {% if products %}
+                    <h1 class="font-weight-bold title">Travel Gifts</h1>
+                {% else %}
+                    <br><br><br><br><br>
+                    <img style="margin-right: 100px" src="{% static 'img/coming-soon.png' %}" width=600px height=200px alt="">
+                    <br><br><br><br><br><br><br><br>
+                {% endif %}
+                {% if user.is_authenticated and user.is_staff %}
+                    <a href="{% url 'add product' %}" style="color: white">
+                        <button class="btn btn-secondary">
+                            Add Product
+                        </button>
+                    </a>
+                    <a href="{% url 'add product category' %}" style="color: white">
+                        <button class="btn btn-secondary">
+                            Add Product Category
+                        </button>
+                    </a>
+                    <a href="{% url 'product categories' %}" style="color: white">
+                        <button class="btn btn-secondary">
+                            Edit/Remove Product Category
+                        </button>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container mb-5" align="center">
+            {% for product in products %}
+                <div class=row style="width: 700px; border: 1px solid black">
+                    <div class="flex-column">
+                        <img src="{{ product.image.url }}" width="400px" height="300px" alt="">
+                    </div>
+                    <div class="flex-column" style="padding: 30px" align="left">
+                        <h4>
+                            {{ product.name }},
+                        </h4>
+                        <h4>
+                            {{ product.destination }}
+                        </h4>
+                        <br>
+                        <h6>Category: {{ product.category }}</h6>
+                        <h6>Price: €{{ product.price|floatformat:2 }}</h6>
+                        <br>
+                        {% if user.is_authenticated or user.is_superuser %}
+                            <a href="{% url 'cart_add' pk=product.pk %}" class="btn btn-secondary">Add to cart</a>
+                        {% else %}
+                            <a href="{% url 'login user' %}" class="btn btn-secondary">Add to cart</a>
+                        {% endif %}
+                        {% if user.is_authenticated and user.is_superuser or request.user == post.user %}
+                            &nbsp&nbsp&nbsp&nbsp
+                            <a href="{% url 'edit product' pk=product.pk %}" style="color: white">
+                                <img src="{% static 'img/edit-pen-icon-6.jpg' %}" width="25px" height="25px" alt="">
+                            </a>
+                            <a href="{% url 'delete product' pk=product.pk %}" style="color: white">
+                                <img src="{% static 'img/icon-remove-22.jpg' %}" width="25px" height="25px" alt="">
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    {% endcache %}
+{% endblock %}

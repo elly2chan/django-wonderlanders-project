@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block page_content %}
+    {% cache 360 edit_category %}
+        <div class="container-fluid" align="center">
+            <div class="row-centered">
+                <br>
+                <h1>Edit Product Category {{ productcategory.title }}</h1>
+                <div class="col-md-11" align="center">
+                    <br>
+                    <form action="{% url 'edit product category' pk=productcategory.pk %}" method="post">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                        <br>
+                        <p>
+                            <button type="submit" class="btn btn-primary">Edit</button>
+                            <a href="{% url 'product categories' %}" class="btn btn-secondary">Go Back</a>
+                        </p>
+                    </form>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+    {% endcache %}
+{% endblock %}

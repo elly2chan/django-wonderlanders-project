@@ -1,0 +1,131 @@
+body {
+  padding-top: 70px; }
+
+img {
+  max-width: 100%; }
+
+a, .a:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.container-fluid {
+  width: 94%;
+  margin: 0px auto;
+  max-width: 94%; }
+
+.border-round-0 {
+  border-radius: 0; }
+
+.mt-neg100 {
+  margin-top: -100px; }
+
+.min-50vh {
+  min-height: 50vh; }
+
+.dropdown-header {
+  font-size: 1.5rem; }
+
+.fixed-top {
+  border-bottom: 1px solid #f1f1f1; }
+
+footer.footer {
+  border-top: 1px solid #f1f1f1;
+}
+
+.nav-link, .dropdown-item {
+  font-weight: 700; }
+
+.navbar {
+  padding: 0.5rem 2rem; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  background-color: #008CBA; }
+
+.card {
+  border: 0; }
+
+.card-pin:hover .overlay {
+  opacity: .5;
+  border: 5px solid #f3f3f3;
+  -webkit-transition: ease .2s;
+  transition: ease .2s;
+  background-color: #000000;
+}
+
+.more {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #252525;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.more h5 {
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.more a {
+  display: inline-block;
+  padding: 7px 35px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.more a:hover {
+  background-color: grey;
+  color: #000000;
+}
+
+.more {
+  top: 0;
+  opacity: 0.9;
+}
+
+.card-pin:hover .card-title {
+  color: #ffffff;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2em; }
+
+.card-pin:hover .more a {
+  text-decoration: none;
+  color: #ffffff; }
+
+.card-pin:hover .download a {
+  text-decoration: none;
+  color: #ffffff; }
+
+.social {
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }

@@ -1,0 +1,149 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block partial_css %}
+    <link href="{% static 'css/about_page.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block page_content %}
+    {% cache 360 about %}
+        <section id=timeline>
+            <h1 align="center">About me</h1>
+            <br><br>
+            <p class="leader">
+                Welcome, dear wonderlanders! <br>
+                The world is full miracles and this website is the
+                place where we can show each other the beauty of our planet!<br>
+                This is our wonderland and we should explore it, love it, care
+                for it and constantly enjoy each and every piece of it!
+                <br>
+                <img src="{% static 'img/earth.jpeg' %}" height="200px" alt="">
+                <br><br><br>
+                To show you these wonders, I too have gone through a journey in another world - the I.T. world.<br>
+                Below I will share with you some of my experience and what was I doing in the past couple of years.<br>
+                I will tell you what inspired and helped me to gain the knowledge to build this website for us
+                travellers. <br>
+            </p>
+            <p class="leader">
+                Hint: Scroll Down<br>
+                <img src="{% static 'img/scroll_down.jpeg' %}" height="150px" alt="">
+            </p>
+            <hr width="70%">
+            <div class="demo-card-wrapper">
+                <div class="demo-card demo-card--step1">
+                    <div class="head">
+                        <div class="number-box">
+                            <span>2019</span>
+                        </div>
+                        <h7>
+                            <span class="small">Education</span>
+                            <br>BSc in Computer Science
+                        </h7>
+                    </div>
+                    <div class="body">
+                        <p align="justify">
+                            In 2019 I graduated from the University of Library Studies and
+                            Information Technologies in Sofia, Bulgaria.
+                            This gave me the confirmation I needed that my wonderland is in the IT galaxy.
+                        </p>
+                        <img src="{% static 'img/graduation.png' %}" width="300px" height="200px" alt="Graphic">
+                    </div>
+                </div>
+                <div class="demo-card demo-card--step2">
+                    <div class="head">
+                        <div class="number-box">
+                            <span>2019</span>
+                        </div>
+                        <h7>
+                            <span class="small">Work</span>
+                            <br>Technical Support Specialist
+                        </h7>
+                    </div>
+                    <div class="body">
+                        <p align="justify">
+                            My first job was in a place far, far away from development but in the year of 2019,
+                            I started doing what I love. I just hadn't found my place yet but the force was with me.
+                        </p>
+                        <img src="{% static 'img/force.jpeg' %}" width="200px" height="200px" alt="Graphic">
+                    </div>
+                </div>
+                <div class="demo-card demo-card--step3">
+                    <div class="head">
+                        <div class="number-box">
+                            <span>2021</span>
+                        </div>
+                        <h7>
+                            <span class="small">Work</span>
+                            <br>Application and Database Analyst
+                        </h7>
+                    </div>
+                    <div class="body">
+                        <p align="justify">
+                            In 2021 I had the opportunity to meet databases.
+                            For a while SQL was always with me. I was talking in SQL, dreaming in SQL, living in SQL.
+                            We didn't become great friends but this is definitely one of my most important
+                            acquaintances.
+                        </p>
+                        <img src="{% static 'img/databases.png' %}" width="300px" height="190px" alt="Graphic">
+                    </div>
+                </div>
+                <div class="demo-card demo-card--step4">
+                    <div class="head">
+                        <div class="number-box">
+                            <span>2021</span>
+                        </div>
+                        <h7>
+                            <span class="small">Education</span>
+                            <br>Python Programming Basics/Fundamentals/Advanced
+                        </h7>
+                    </div>
+                    <div class="body">
+                        <p align="justify">
+                            Dear diary, I found the best academy in the world!<br>
+                            And wow! What a journey! And the most amazing part is that you are reading this
+                            because I made it (and I made this website thanks to it)!
+                        </p>
+                        <img src="{% static 'img/softuni.png' %}" width="200px" height="200px" alt="Graphic">
+                    </div>
+                </div>
+                <div class="demo-card demo-card--step5">
+                    <div class="head">
+                        <div class="number-box">
+                            <span>2022</span>
+                        </div>
+                        <h7><span class="small">Work</span>
+                            <br>Blockchain IP Analyst
+                        </h7>
+                    </div>
+                    <div class="body">
+                        <p align="justify">
+                            Here is where I currently am - working with Python and Java for a small
+                            but meaningful startup that wants to make the world a little better.
+                            So I guess studying is not only worth it but is also something I now know for sure will
+                            never
+                            give up!
+                        </p>
+                        <img src="{% static 'img/dream.png' %}" width="200px" height="170px" alt="Graphic">
+                    </div>
+                </div>
+                <div class="demo-card demo-card--step4">
+                    <div class="head">
+                        <div class="number-box">
+                            <span>2022</span>
+                        </div>
+                        <h7><span class="small">Education</span><br>Python Web</h7>
+                    </div>
+                    <div class="body">
+                        <p align="justify">
+                            And of course the basis of what you see here in this website is again
+                            because of the amazing Software University
+                            and some superheroes like Doncho Minkov.
+                        </p>
+                        <img src="{% static 'img/superheroes.png' %}" width="300px" height="200px" alt="Graphic">
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endcache %}
+{% endblock %}

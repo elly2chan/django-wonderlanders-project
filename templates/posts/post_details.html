@@ -1,0 +1,124 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <br><br>
+                <img class="card-img" src="{{ post.photo.url }}" alt="Card image" style="border-radius: 25px"
+                     width="300" height="300">
+            </div>
+            <div class="col-md-7">
+                <br><br>
+                <h1 class="card-title display-4">
+                    {{ post.title }}
+                    {% if user.is_authenticated and user.is_superuser or request.user == post.user %}
+                        <a href="{% url 'edit post' pk=post.pk %}" style="color: white">
+                            <img src="{% static 'img/edit-pen-icon-6.jpg' %}" width="30px" height="30px" alt="">
+                        </a>
+                        <a href="{% url 'delete post' pk=post.pk %}" style="color: white">
+                            <img src="{% static 'img/icon-remove-22.jpg' %}" width="30px" height="30px" alt="">
+                        </a>
+                    {% endif %}
+                    <a href="{% url 'post category' slug=post.category.slug %}" style="color: white">
+                        <img src="{% static 'img/back-arrow.png' %}" width="30px" height="30px" alt="">
+                    </a>
+                </h1>
+                <h1 class="card-title display-4">{{ post.destination }}</h1>
+                <div align="justify">
+                    {{ post.description|linebreaks }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-5" style="margin-left: 35px">
+        <div class="d-flex justify-content-center row">
+            <div class="d-flex flex-column col-md-8">
+                <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white px-2">
+                    <div class="profile-image">
+                        {% if request.user.profile_picture %}
+                            <img class="rounded-circle" src="{{ request.user.profile_picture }}" width="50" height="50"
+                                 alt="">
+                        {% else %}
+                            <img src="{% static 'img/user.png' %}" width="50" height="50" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="d-flex flex-column ml-3">
+                        <div class="d-flex flex-row post-title">
+                            <h5>{{ request.user.username }}</h5>
+                            <span class="ml-2">{{ post.title }}, {{ post.destination }}</span></div>
+                        <div class="d-flex flex-row align-items-center align-content-center post-title">
+                            <span class="mr-2 comments">{{ post_comments.count }} comments</span>
+                            <span class="mr-2 dot"></span>
+                            {% if last_comment %}
+                                <span>Last comment: {{ last_comment.publication_datetime }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <form action="{% url 'comment post' pk=post.pk %}" method="post">
+                            <p>
+                                {{ form.as_p }}
+                                {% csrf_token %}
+                                <button class="btn btn-secondary" type="submit">Comment</button>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="commented-section mt-2">
+                        {% for comment in post_comments %}
+                            <p>
+                            <div class="d-flex flex-row commented-user" style="margin-left: 15px">
+                                {% if comment.user.profile_picture %}
+                                    <img src="{{ comment.user.profile_picture }}" width="30" height="30"
+                                         style="border-radius: 50%" alt="">
+                                {% else %}
+                                    <img src="{% static 'img/user.png' %}" width="30" height="30" alt="">
+                                {% endif %}
+                                <h5 class="mr-2">&nbsp{{ comment.user.username }}</h5>
+                                <span class="dot mb-1"></span>
+                                <span class="mb-1 ml-2">{{ comment.publication_datetime }}
+                                    {% if request.user == comment.user or request.user.is_superuser %}
+                                        <a href="{% url 'delete comment' pk=comment.pk %}">
+                                    <img src="{% static 'img/icon-remove-22.jpg' %}" width="20px" height="20px" alt="">
+                                </a>
+                                    {% endif %}
+                        </span>
+                            </div>
+                            <div class="comment-text-sm">
+                                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ comment.comment }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if category_posts %}
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <h5 class="font-weight-bold">More like this</h5>
+                <div class="card-columns">
+                    {% for post in category_posts %}
+                        <div class="card card-pin">
+                            <img class="card-img" src="{{ post.photo.url }}" alt="Card image">
+                            <div class="overlay">
+                                <div class="more">
+                                    <b>{{ post.title }}</b>
+                                    <br>
+                                    <a href="{% url 'post details' pk=post.pk %}">
+                                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                                        More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <br><br><br>
+{% endblock %}

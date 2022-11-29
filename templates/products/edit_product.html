@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <br><br>
+                <img class="card-img" src="{{ product.image.url }}" alt="Card image">
+            </div>
+            <div class="col-md-7" align="justify">
+                <br><br>
+                <form action="{% url 'edit product' pk=product.pk %}" method="post">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <p>
+                        <button type="submit" class="btn btn-primary">Edit Product</button>
+                        <a href="{% url 'all products' %}" class="btn btn-secondary">Go Back</a>
+                    </p>
+                </form>
+                <p>
+
+                </p>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <section class="mt-4 mb-5">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <br><br>
+                    {% if profile.profile_picture %}
+                        <img style="border-radius: 50%" src="{{ profile.profile_picture }}" alt="">
+                    {% else %}
+                        <img src="{% static 'img/user.png' %}" height="150px" width="150px" alt="">
+                    {% endif %}
+                </div>
+                <div class="col-5">
+                    <br><br>
+                    <p>
+                        <b>{{ profile.username|upper }}&nbsp&nbsp</b>
+                        <a href="{% url 'edit user' pk=request.user.pk %}" style="color: white">
+                            <img src="{% static 'img/edit-pen-icon-6.jpg' %}" height="25px" width="25px" alt="">
+                        </a>
+                        <a href="{% url 'delete user' pk=request.user.pk %}" style="color: white">
+                            <img src="{% static 'img/icon-remove-22.jpg' %}" height="25px" width="25px" alt="">
+                        </a>
+                    </p>
+                    {% if profile.first_name and profile.last_name %}
+                        <p><b>{{ profile.first_name }} {{ profile.last_name }}</b></p>
+                    {% endif %}
+                    <p><b>Posts: {{ posts_count }}</b></p>
+                    <p><b>{{ profile.email }}</b></p>
+                    <a class="btn btn-secondary" href="{% url 'logout user' %}">
+                        Log out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <div class="card-columns">
+                {% for post in posts %}
+                    <div class="card card-pin">
+                        <img class="card-img" src="/media/{{ post.image }}" alt="Card image">
+                        <div class="overlay">
+                            <div class="more">
+                                <b>{{ post.title }}</b>
+                                <br>
+                                <a href="{% url 'post details' pk=post.pk %}">
+                                    <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                                    More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% block pagination %}
+        {% include 'common/pagination.html' %}
+    {% endblock %}
+    </div>
+    {% if not posts %}
+        <div class="container-fluid" align="center">
+            <div class="row-centered">
+                <img src="{% static 'img/no_posts.png' %}" height="400px" alt="">
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

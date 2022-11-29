@@ -1,0 +1,113 @@
+{% load static %}
+{% load cart_tag %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+    <title>Wonderlanders</title>
+    <link href="{% static 'css/app.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet"/>
+    {% block partial_css %}
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <a class="navbar-brand font-weight-bolder mr-3" href="{% url 'index' %}">
+        <img src="{% static 'img/logo.png' %}" alt="" width=29px height=29px>
+    </a>
+    <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+            aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+        <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'all products' %}">Products</a>
+                {% if not request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'login user' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'register user' %}">Register</a>
+                    </li>
+                {% endif %}
+            {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'create post' %}">Create Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'details user' pk=request.user.pk %}">
+                        {% if request.user.profile_picture %}
+                            <img class="rounded-circle mr-2" src="{{ request.user.profile_picture }}" width="40"
+                                 height="40" alt="">
+                        {% else %}
+                            <img src="{% static 'img/user.png' %}" width="40" height="40" alt="">
+                        {% endif %}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+        {% if user.is_authenticated %}
+            <div class="form-inline my-2 my-lg-0">
+                <a href="{% url 'cart_detail' %}">
+                    <img id="cart-icon" src="{% static 'img/cart.png' %}" alt="" width="30px" height="30px">
+                </a>
+                <p id="cart-total">
+                    {{ cart_products_count }}
+                </p>
+            </div>
+        {% endif %}
+    </div>
+</nav>
+{% block page_content %}
+{% block pagination %}
+{% endblock %}
+{% endblock %}
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
+<footer class="footer pt-5 pb-5 text-center">
+    <div class="container">
+        <div class="socials-media">
+            <ul class="list-unstyled">
+                <li class="d-inline-block ml-1 mr-1">
+                    <img src="{% static 'img/facebook.png' %}" alt="" width=29px height=29px>
+                </li>
+                <li class="d-inline-block ml-1 mr-1">
+                    <img src="{% static 'img/instagram.png' %}" alt="" width=29px height=29px>
+                </li>
+                <li class="d-inline-block ml-1 mr-1">
+                    <img src="{% static 'img/twitter.png' %}" alt="" width=29px height=29px>
+                </li>
+                <li class="d-inline-block ml-1 mr-1">
+                    <img src="{% static 'img/youtube.png' %}" alt="" width=29px height=29px>
+                </li>
+            </ul>
+        </div>
+        <p>©
+            <span class="credits font-weight-bold">
+                    <a target="_blank" class="text-dark"
+                       href="https://www.wowthemes.net/pintereso-free-html-bootstrap-template/">
+                        <u>
+                            Pintereso Bootstrap HTML Template
+                        </u> by WowThemes.net.
+                    </a>
+            </span>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

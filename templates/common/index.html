@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block page_content %}
+    {% cache 360 index %}
+        <section class="mt-4 mb-5">
+            <div class="container mb-4">
+                {% if posts %}
+                    <h1 class="font-weight-bold title">Explore The World</h1>
+                {% else %}
+                    <h1 class="font-weight-bold title">Be the first explorer and upload the first post</h1>
+                    <img style="margin-left: 100px" src="{% static 'img/globe.jpeg' %}" alt="">
+                {% endif %}
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white pl-2 pr-2">
+                        <div class="collapse navbar-collapse" id="navbarsExplore">
+                            <ul class="navbar-nav">
+                                {% if categories %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'index' %}">All</a>
+                                    </li>
+                                    {% for category in categories %}
+                                        <li class="nav-item">
+                                            <a class="nav-link"
+                                               href="{% url 'post category' slug=category.slug %}">{{ category.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card-columns">
+                        {% for post in posts %}
+                            <div class="card card-pin">
+                                <img class="card-img" src="{{ post.photo.url }}" alt="Card image">
+                                <div class="overlay">
+                                    <div class="more">
+                                        {% if request.user.is_authenticated %}
+                                            <b>{{ post.title }}</b>
+                                            <br>
+                                            <a href="{% url 'post details' pk=post.pk %}">
+                                                <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                                                More
+                                            </a>
+                                        {% else %}
+                                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                                            Log in to see post details
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% block pagination %}
+                    {% include 'common/pagination.html' %}
+                {% endblock %}
+            </div>
+        </section>
+    {% endcache %}
+{% endblock %}

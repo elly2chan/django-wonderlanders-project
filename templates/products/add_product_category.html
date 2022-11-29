@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block page_content %}
+    {% cache 360 add_product %}
+        <div class="container mb-10">
+            <div class="row">
+                <div class="col-md-5">
+                    <br><br><br><br><br><br><br><br><br>
+                    <h1>Add category</h1>
+                    <form action="{% url 'add product category' %}" method="POST">
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                        <p>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="{% url 'all products' %}" class="btn btn-secondary">Go Back</a>
+                        </p>
+                    </form>
+                </div>
+                <div class="col-md-7">
+                    <br><br><br><br><br><br><br><br>
+                    <img src="{% static 'img/category.png' %}" width="200px" alt="">
+                </div>
+            </div>
+        </div>
+    {% endcache %}
+{% endblock %}

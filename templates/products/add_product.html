@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container mb-5">
+        <br>
+        <h1>Add product</h1>
+        <div class="row">
+            <div class="col-md-5">
+                <form action="{% url 'add product' %}" method="POST" enctype="multipart/form-data">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <p>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{% url 'all products' %}" class="btn btn-secondary">Go Back</a>
+                    </p>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <br>
+                <img src="{% static 'img/product.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

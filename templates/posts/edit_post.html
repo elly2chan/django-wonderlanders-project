@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <br><br>
+                <img class="card-img" src="{{ post.photo.url }}" style="border-radius: 25px" alt="Card image"
+                width="300" height="300">
+            </div>
+            <div class="col-md-7" align="justify">
+                <br><br>
+                <form action="{% url 'edit post' pk=post.pk %}" method="post">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <p>
+                        <button type="submit" class="btn btn-primary">Edit Post</button>
+                        <a href="{% url 'post details' pk=post.pk %}" class="btn btn-secondary">Go Back</a>
+                    </p>
+                </form>
+                <p>
+
+                </p>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+{% endblock %}

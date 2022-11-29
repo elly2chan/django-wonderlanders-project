@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container">
+        <br>
+        <h1>Edit Profile</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-5">
+                <form action="" method="POST">
+                    {{ form.as_p }}
+                    <p>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="btn btn-secondary" href="{% url 'details user' pk=request.user.pk %}">Go Back</a>
+                    </p>
+                    {% csrf_token %}
+                </form>
+            </div>
+            <div class="col-md-4">
+                <br>
+                {% if profile.profile_picture %}
+                    <img src="{{ profile.profile_picture }}" style="border-radius: 50%" alt="">
+                {% else %}
+                    <img src="{% static 'img/user.png' %}" width="300px" height="300px" alt="">
+                {% endif %}
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

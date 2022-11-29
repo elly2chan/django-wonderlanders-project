@@ -1,0 +1,43 @@
+<br><br><br>
+<div class="pagination">
+<div class="row-centered mb-5">
+    <span>
+        {% if posts.has_previous %}
+            <a href="?page=1">
+                <button type="button" class="btn-sm btn-secondary" style="border: 1px solid black;
+                height: 40px">
+                    << FIRST
+                </button>
+            </a>
+            <a href="?page={{ posts.previous_page_number }}">
+                <button type="button" class="btn-sm btn-secondary" style="border: 1px solid black;
+                height: 40px">
+                    <
+                </button>
+            </a>
+        {% endif %}
+        {% if posts.has_previous or posts.has_next %}
+            <span class="current">
+            <button type="button" class="btn-sm btn-secondary" style="border: 1px solid black;
+                height: 40px; background-color: white; color: black" disabled>
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+            </button>
+        </span>
+        {% endif %}
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">
+                <button type="button" class="btn-sm btn-secondary" style="border: 1px solid black;
+                height: 40px;">
+                    >
+                </button>
+            </a>
+            <a href="?page={{ posts.paginator.num_pages }}">
+                <button type="button" class="btn-sm btn-secondary" style="border: 1px solid black;
+                height: 40px;">
+                    LAST >>
+                </button>
+            </a>
+        {% endif %}
+    </span>
+</div>
+</div>
