@@ -6,13 +6,15 @@
 {#    {% cache 360 index %}#}
         <section class="mt-4 mb-5">
             <div class="container">
+            <div class="row-centered">
                 {% if posts %}
                     <h1 class="font-weight-bold title">Explore The World</h1>
                 {% else %}
-                    <h1 class="font-weight-bold title" align="center">Be the first explorer<br>Upload your journey</h1>
+                    <h1 class="font-weight-bold title">Be the first explorer<br>Upload your journey</h1>
                     <br><br>
-                    <img style="margin-left: 270px" src="{% static 'img/globe.jpeg' %}" height="300px" alt="">
+                    <img src="{% static 'img/globe.jpeg' %}" height="300px" alt="">
                 {% endif %}
+            </div>
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light bg-white pl-2 pr-2">
                         <div class="collapse navbar-collapse" id="navbarsExplore">
