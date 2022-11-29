@@ -1,28 +1,25 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% load cache %}
 
 {% block page_content %}
-    {% cache 360 delete_category %}
-        <div class="container-fluid" align="center">
-            <br><br><br>
-            <div class="row-centered">
-                <h3>
-                    Are you sure you want to delete category "{{ productcategory.title }}"?
-                </h3>
-                <div class="col-md-11" align="center">
-                    <br>
-                    <form action="{% url 'delete product category' pk=productcategory.pk %}" method="POST">
-                        {{ form.as_p }}
-                        <p>
-                            <button type="submit" class="btn btn-primary">Yes</button>
-                            <a class="btn btn-secondary" href="{% url 'product categories' %}">Go Back</a>
-                        </p>
-                        {% csrf_token %}
-                    </form>
-                    <br><br><br>
-                </div>
+    <div class="container-fluid" align="center">
+        <br><br><br>
+        <div class="row-centered">
+            <h3>
+                Are you sure you want to delete category "{{ productcategory.title }}"?
+            </h3>
+            <div class="col-md-11" align="center">
+                <br>
+                <form action="{% url 'delete product category' pk=productcategory.pk %}" method="POST">
+                    {{ form.as_p }}
+                    <p>
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <a class="btn btn-secondary" href="{% url 'product categories' %}">Go Back</a>
+                    </p>
+                    {% csrf_token %}
+                </form>
+                <br><br><br>
             </div>
         </div>
-    {% endcache %}
+    </div>
 {% endblock %}

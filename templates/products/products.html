@@ -1,39 +1,32 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% load cache %}
 
 {% block page_content %}
-    {% cache 360 products %}
-        <div class="container">
-            <div class="container mb-5" align="center">
-                <br>
-                {% if products %}
-                    <h1 class="font-weight-bold title">Travel Gifts</h1>
-                {% else %}
-                    <br><br><br><br><br>
-                    <img style="margin-right: 100px" src="{% static 'img/coming-soon.png' %}" width=600px height=200px alt="">
-                    <br><br><br><br><br><br><br><br>
-                {% endif %}
-                {% if user.is_authenticated and user.is_staff %}
-                    <a href="{% url 'add product' %}" style="color: white">
-                        <button class="btn btn-secondary">
-                            Add Product
-                        </button>
-                    </a>
-                    <a href="{% url 'add product category' %}" style="color: white">
-                        <button class="btn btn-secondary">
-                            Add Product Category
-                        </button>
-                    </a>
-                    <a href="{% url 'product categories' %}" style="color: white">
-                        <button class="btn btn-secondary">
-                            Edit/Remove Product Category
-                        </button>
-                    </a>
-                {% endif %}
-            </div>
-        </div>
+    <div class="container">
         <div class="container mb-5" align="center">
+            <br>
+            <h1 class="font-weight-bold title">Travel Gifts</h1>
+            {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'add product' %}" style="color: white">
+                    <button class="btn btn-secondary">
+                        Add Product
+                    </button>
+                </a>
+                <a href="{% url 'add product category' %}" style="color: white">
+                    <button class="btn btn-secondary">
+                        Add Product Category
+                    </button>
+                </a>
+                <a href="{% url 'product categories' %}" style="color: white">
+                    <button class="btn btn-secondary">
+                        Edit/Remove Product Category
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container mb-5" align="center">
+        {% if products %}
             {% for product in products %}
                 <div class=row style="width: 700px; border: 1px solid black">
                     <div class="flex-column">
@@ -68,6 +61,11 @@
                 </div>
                 <br>
             {% endfor %}
-        </div>
-    {% endcache %}
+        {% else %}
+            <br><br><br>
+            <img style="margin-right: 100px" src="{% static 'img/coming-soon.png' %}" width=600px height=200px
+                 alt="">
+            <br><br><br>
+        {% endif %}
+    </div>
 {% endblock %}

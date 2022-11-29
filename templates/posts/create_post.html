@@ -1,27 +1,24 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% load cache %}
 
 {% block page_content %}
-    {% cache 360 create_post %}
-        <div class="container">
-            <br>
-            <h1>Create post</h1>
-            <div class="row">
-                <div class="col-md-5">
-                    <form action="{% url 'create post' %}" method="POST" enctype="multipart/form-data">
-                        {{ form.as_p }}
-                        {% csrf_token %}
-                        <p>
-                            <button type="submit" class="btn btn-secondary">Submit</button>
-                        </p>
-                    </form>
-                </div>
-                <div class="col-md-7">
-                    <br><br>
-                    <img src="{% static 'img/post.png' %}" alt="">
-                </div>
+    <div class="container">
+        <br>
+        <h1>Create post</h1>
+        <div class="row">
+            <div class="col-md-5">
+                <form action="{% url 'create post' %}" method="POST" enctype="multipart/form-data">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <p>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </p>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <br><br>
+                <img src="{% static 'img/post.png' %}" alt="">
             </div>
         </div>
-    {% endcache %}
+    </div>
 {% endblock %}

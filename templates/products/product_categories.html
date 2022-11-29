@@ -1,38 +1,35 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% load cache %}
 
 {% block page_content %}
-    {% cache 180 product_categories %}
-        <div class="container">
-            <div class="container mb-5" align="center">
-                <br>
-                <h1 class="font-weight-bold title">
-                    Product Categories
-                    <a href="{% url 'all products' %}" class="btn btn-secondary" style="border-radius: 25px">
-                        Go Back
-                    </a>
-                </h1>
-            </div>
-            {% for category in productcategory_list %}
-                <div class="container mb-5"
-                     style="width: 500px; height: 100px; border: 1px solid black; border-radius: 25px">
-                    <div class="row" style="justify-content: center">
-                        <div class="col-md-7">
-                            <p>
-                            <h3>{{ category.title }}</h3>
-                        </div>
-                        <a href="{% url 'edit product category' pk=category.pk %}" style="color: white">
-                            <br>
-                            <img src="{% static 'img/edit-pen-icon-6.jpg' %}" width="30px" height="30px" alt="">
-                        </a>
-                        <a href="{% url 'delete product category' pk=category.pk %}" style="color: white">
-                            <br>
-                            <img src="{% static 'img/icon-remove-22.jpg' %}" width="30px" height="30px" alt="">
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
+    <div class="container">
+        <div class="container mb-5" align="center">
+            <br>
+            <h1 class="font-weight-bold title">
+                Product Categories
+                <a href="{% url 'all products' %}" class="btn btn-secondary" style="border-radius: 25px">
+                    Go Back
+                </a>
+            </h1>
         </div>
-    {% endcache %}
+        {% for category in productcategory_list %}
+            <div class="container mb-5"
+                 style="width: 500px; height: 100px; border: 1px solid black; border-radius: 25px">
+                <div class="row" style="justify-content: center">
+                    <div class="col-md-7">
+                        <p>
+                        <h3>{{ category.title }}</h3>
+                    </div>
+                    <a href="{% url 'edit product category' pk=category.pk %}" style="color: white">
+                        <br>
+                        <img src="{% static 'img/edit-pen-icon-6.jpg' %}" width="30px" height="30px" alt="">
+                    </a>
+                    <a href="{% url 'delete product category' pk=category.pk %}" style="color: white">
+                        <br>
+                        <img src="{% static 'img/icon-remove-22.jpg' %}" width="30px" height="30px" alt="">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

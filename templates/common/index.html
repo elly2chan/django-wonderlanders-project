@@ -10,13 +10,14 @@
                     <h1 class="font-weight-bold title">Explore The World</h1>
                 {% else %}
                     <h1 class="font-weight-bold title">Be the first explorer and upload the first post</h1>
-                    <img style="margin-left: 100px" src="{% static 'img/globe.jpeg' %}" alt="">
+                    <br>
+                    <img style="margin-left: 140px" src="{% static 'img/globe.jpeg' %}" alt="">
                 {% endif %}
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light bg-white pl-2 pr-2">
                         <div class="collapse navbar-collapse" id="navbarsExplore">
                             <ul class="navbar-nav">
-                                {% if categories %}
+                                {% if posts and categories %}
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'index' %}">All</a>
                                     </li>

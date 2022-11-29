@@ -122,15 +122,3 @@ class Product(models.Model):
 @receiver(pre_delete, sender=Product)
 def photo_auto_delete(sender, instance, **kwargs):
     cloudinary.uploader.destroy(instance.image.public_id)
-
-
-@receiver(post_save, sender=Product)
-def update_products_cache(sender, **kwargs):
-    if post_save:
-        cache.clear()
-
-
-@receiver(post_delete, sender=Product)
-def update_products_cache(sender, **kwargs):
-    if post_delete:
-        cache.clear()
