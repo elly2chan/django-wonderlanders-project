@@ -1,19 +1,18 @@
 <div align="center">
 <p align=center>
- <a href="https://softuni.bg">
- <img src="http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png" alt="Logo" width="600">
- </a>
- <p>
- <br><br>
- <h1 align=center>Wonderlanders</h1>
- <h3 align=center>
- A stylish website for travellers built with Django and Python.<br>
+<a href="https://softuni.bg">
+<img src="http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png" alt="Logo" width="600">
+</a>
+<p>
+<br><br>
+<h1 align=center>Wonderlanders</h1>
+<h3 align=center>
+A stylish website for travellers built with Django and Python.<br>
 Final project for the Web Framework Course in Software University.<br>
 <br>
-	 <a href='https://wonderlanders.tk'> To see the demo click here </a>
-	
+<a href='https://wonderlanders.tk'> To see the demo click here </a>
+<br>	
 [About](#about) | [Installation](#installation) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
-
 </h3>
 	 
 </div>
