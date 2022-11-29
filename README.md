@@ -10,7 +10,7 @@
  A stylish website for travellers built with Django and Python.<br>
 Final project for the Web Framework Course in Software University.<br>
 <br>
-You can see the demo here: <a>https://wonderlanders.tk</a>
+	 <a href='https://wonderlanders.tk'> YOU CAN SEE THE DEMO HERE </a>
 </h3>
 	
 [About](#about) | [Installation](#installation) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
