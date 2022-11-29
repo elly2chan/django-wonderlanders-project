@@ -33,6 +33,8 @@ git clone https://github.com/elly2chan/wonderlanders-django-project
 ```bash
 pip install -r requirements.txt
 ```
+***Note: If you are on a Mac, change "psycopg2" to "psycopg2-binary" in requirements.txt before running the command above!***
+
 ## In order to use the app, you should change the following in settings.py:
 
 ```python
@@ -40,7 +42,7 @@ SECRET_KEY = config['SECRET_KEY'] # Change to a valid secret key or set it up in
 
 DEBUG = bool(config['DEBUG']) # Change to True/False or set it up in a .env file
 
-ALLOWED_HOSTS = config['ALLOWED_HOSTS'].split(' ') # Change to valid hosts or set them up in a .env file
+ALLOWED_HOSTS = config['ALLOWED_HOSTS'].split(' ') # Change to valid hosts or set them in .env file
 ```
 
 Change database credentials to valid ones or set them up in a .env file and leave them as they are:
