@@ -5,13 +5,13 @@
 {% block page_content %}
     {% cache 360 index %}
         <section class="mt-4 mb-5">
-            <div class="container mb-4">
+            <div class="container mb-4" align="center">
                 {% if posts %}
                     <h1 class="font-weight-bold title">Explore The World</h1>
                 {% else %}
                     <h1 class="font-weight-bold title">Be the first explorer and upload the first post</h1>
                     <br><br><br><br><br>
-                    <img style="margin-left: 200px" src="{% static 'img/globe.jpeg' %}" width=400px height=250px alt="">
+                    <img src="{% static 'img/globe.jpeg' %}" width=400px height=250px alt="">
                 {% endif %}
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light bg-white pl-2 pr-2">
