@@ -76,10 +76,9 @@ pip install -r requirements.txt
 
 <br>
 
-***In order to use the app, you should change all values like "config['SECRET_KEY'] below to valid ones or just set them all up in a .env file***
-***All of the configurations are found in the "settings.py" file in the project.***
+***Next thing you should do is to configure your "settings.py" file****
 
-***MAIN CONFIG***
+***All of the values below (like config['SECRET_KEY']) can be changed to valid ones or you can set them up in a .env file***
 	
 ```python
 SECRET_KEY = config['SECRET_KEY'] # Change to a valid secret key or set it up in a .env file
