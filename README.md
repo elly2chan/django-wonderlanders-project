@@ -29,7 +29,7 @@ Final project for the Web Framework Course in Software University.<br>
 <h4> 
 	Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
 	The functionalities are as follows:
-	
+	<br>
 	1) For unregistered users:
 	   - You can view 
 </h4>
