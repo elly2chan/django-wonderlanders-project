@@ -33,7 +33,7 @@ Final project for the Web Framework Course in Software University.<br>
 	1) For unregistered users:
 	   - You can review all post categories and all pictures without accessing posts details
 	   - You will have access to "About", "Contact" and "Products" pages
-	   - In the "Products" page you will be able to see our products but to add them to your cart,<br>
+	   - In the "Products" page you will be able to see our products but to add them to your cart,
 	     you will have to create an account
 	
 	2) For registered users:
