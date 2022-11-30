@@ -76,7 +76,7 @@ pip install -r requirements.txt
 
 <br>
 
-***In order to use the app, you should change the following in settings.py:***
+***In order to use the app, you should change all values like "config['DB_ENGINE'] to valid ones or just set them all up in a .env file:***
 
 ```python
 SECRET_KEY = config['SECRET_KEY'] # Change to a valid secret key or set it up in a .env file
@@ -85,8 +85,6 @@ DEBUG = bool(config['DEBUG']) # Change to True/False or set it up in a .env file
 
 ALLOWED_HOSTS = config['ALLOWED_HOSTS'].split(' ') # Change to valid hosts or set them in .env file
 ```
-
-***Do the same for the rest below - change them to valid ones or set them up in .env file:***
 
 ```python
 DATABASES = {
