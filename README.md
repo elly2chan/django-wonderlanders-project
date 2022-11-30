@@ -58,7 +58,7 @@ Final project for the Web Framework Course in Software University.<br>
    - They can add, edit and delete post categories
    - They can add, edit and delete users, user groups, user permissions
    - They can add, edit and delete products and product categories
-   - To summarize, superusers can do it all :muscle:
+   - To summarize, superusers can do it all  :muscle::muscle::muscle:
 	
 	
 <!-- INSTALLATION -->
