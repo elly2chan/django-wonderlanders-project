@@ -31,8 +31,6 @@ Final project for the Web Framework Course in Software University.<br>
 	It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br><br>
 	The functionalities for the different types of users are as follows: <br><br>
 
-</h4>
-
 1) For unregistered users:
    - You can review all post categories and all pictures without accessing posts details
    - You will have access to "About", "Contact" and "Products" pages
@@ -60,6 +58,7 @@ Final project for the Web Framework Course in Software University.<br>
    - They can add, edit and delete products and product categories
    - To summarize, superusers can do it all	:muscle::muscle::muscle:
 	
+</h4>
 	
 <!-- INSTALLATION -->
 ## Installation
