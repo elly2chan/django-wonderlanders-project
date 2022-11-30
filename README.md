@@ -35,6 +35,7 @@ Final project for the Web Framework Course in Software University.<br>
 	   - You will have access to "About", "Contact" and "Products" pages
 	   - In the "Products" page you will be able to see our products but to add them to your cart,
 	     you will have to create an account
+	   - You will have acces to "Login" and "Register" pages
 	
 	2) For registered users:
 	   - You can review all posts, all post categories and all posts details
@@ -42,6 +43,8 @@ Final project for the Web Framework Course in Software University.<br>
 	   - You will have full CRUD for all of your created content
 	   - You can add and remove products from your cart
 	   - You will have access to the checkout page in case you want to place your order
+	
+	<br>
 	
 	Apart from this..
 </h4>
