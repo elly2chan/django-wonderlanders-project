@@ -26,7 +26,13 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- ABOUT -->
 ## About
 
-<h4> testst esteststest </h4>
+<h4> 
+	Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
+	The functionalities are as follows:
+	
+	1) For unregistered users:
+	   - You can view 
+</h4>
 	
 <!-- INSTALLATION -->
 ## Installation
