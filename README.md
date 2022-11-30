@@ -112,6 +112,8 @@ DATABASES = {
     }
 }
 ```
+	
+<h4>If you want to use cache, you can configure it as well:</h4>
 
 ```python
 CACHES = {
