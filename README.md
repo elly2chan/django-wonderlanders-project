@@ -30,6 +30,7 @@ Final project for the Web Framework Course in Software University.<br>
 	Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br><br>
 	The functionalities are as follows: <br><br>
 	
+	```bash
 	1) For unregistered users:
 	   - You can review all post categories and all pictures without accessing posts details
 	   - You will have access to "About", "Contact" and "Products" pages
@@ -43,7 +44,7 @@ Final project for the Web Framework Course in Software University.<br>
 	   - You will have full CRUD for all of your created content
 	   - You can add and remove products from your cart
 	   - You will have access to the checkout page in case you want to place your order
-	
+	```
 	<br>
 	
 	Apart from this..
