@@ -77,10 +77,8 @@ pip install -r requirements.txt
 <br>
 
 <h4>Next you should configure your "settings.py" file by either changing values below (like config['SECRET_KEY'])<br>
-or set them up in a .env file</h4>
+or set them up in a .env file, see example:</h4>
 
-***All of the values below (like config['SECRET_KEY']) can be changed to valid ones or you can set them up in a .env file***
-	
 ```python
 SECRET_KEY = config['SECRET_KEY'] # Change to a valid secret key or set it up in a .env file
 
@@ -89,6 +87,8 @@ DEBUG = bool(config['DEBUG']) # Change to True/False or set it up in a .env file
 ALLOWED_HOSTS = config['ALLOWED_HOSTS'].split(' ') # Change to valid hosts or set them in .env file
 ```
 
+<h4>Do the same for your database configuation:</h4>
+	
 ```python
 DATABASES = {
     'default': {
@@ -102,7 +102,7 @@ DATABASES = {
 }
 ```
 
-***Or use the default database configuration:***
+<h4>Or use the default database configuration:</h4>
 
 ```python
 DATABASES = {
@@ -122,7 +122,7 @@ CACHES = {
 }
 ```
 
-***Set Cloudinary configuration:***
+<h4>Set Cloudinary configuration:</h4>
 
 ```python
 cloudinary.config(
