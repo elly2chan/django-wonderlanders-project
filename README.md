@@ -42,10 +42,8 @@ Final project for the Web Framework Course in Software University.<br>
 	   - You can access all pages in the website
 	   - You will have full CRUD for all of your created content
 	   - You can add and remove products from your cart
-	   - You will have access to the checkout page in case you want to place your order
+	   - You will have access to the checkout page in case you want to place your order<br><br>
 
-	<br><br>
-	
 	Apart from this..
 </h4>
 	
