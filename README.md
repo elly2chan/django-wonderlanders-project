@@ -84,7 +84,7 @@ DEBUG = bool(config['DEBUG']) # Change to True/False or set it up in a .env file
 ALLOWED_HOSTS = config['ALLOWED_HOSTS'].split(' ') # Change to valid hosts or set them in .env file
 ```
 
-Change database credentials to valid ones or set them up in a .env file and leave them as they are:
+## Do the same for the rest below - change them to valid ones or set them up in .env file:
 
 ```python
 DATABASES = {
@@ -99,7 +99,7 @@ DATABASES = {
 }
 ```
 
-Or use the default database configuration:
+## Or use the default database configuration:
 
 ```python
 DATABASES = {
@@ -109,8 +109,6 @@ DATABASES = {
     }
 }
 ```
-
-Set Redis Cache configuration (same as DB - change values to valid ones or set them up in .env file):
 
 ```python
 CACHES = {
