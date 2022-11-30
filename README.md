@@ -63,7 +63,7 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- INSTALLATION -->
 ## Installation
 
-***First you should do two things:***
+<h4>First you should do two things:</h4>
 
 ```bash
 git clone https://github.com/elly2chan/django-wonderlanders-project
