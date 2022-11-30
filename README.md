@@ -1,5 +1,3 @@
-[Readme](#readme)
-
 <div align="center">
 <p align=center>
 <a href="https://softuni.bg">
@@ -171,5 +169,3 @@ cloudinary.config(
 ## License
 
 Distributed under the [MIT](https://github.com/elly2chan/wonderlanders-django-project/blob/main/LICENSE) License.
-
-<p align="left"><a href="#readme">Back to top</a></p>
