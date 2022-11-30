@@ -26,8 +26,10 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- ABOUT -->
 ## About
 
-Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br><br>
-The functionalities are as follows: <br><br>
+<h4>
+	Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br><br>
+	The functionalities are as follows: <br><br>
+</h4>
 
 1) For unregistered users:
    - You can review all post categories and all pictures without accessing posts details
