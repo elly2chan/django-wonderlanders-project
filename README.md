@@ -76,8 +76,13 @@ pip install -r requirements.txt
 
 <br>
 
-***In order to use the app, you should change all values like "config['DB_ENGINE'] to valid ones or just set them all up in a .env file:***
+***
+	In order to use the app, you should change all values like "config['SECRET_KEY'] below to valid ones or just set them all up in a .env file.
+	All of the configurations are found in the "settings.py" file in the project.
+***
 
+***MAIN CONFIG***
+	
 ```python
 SECRET_KEY = config['SECRET_KEY'] # Change to a valid secret key or set it up in a .env file
 
