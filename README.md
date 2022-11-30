@@ -26,7 +26,7 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- ABOUT -->
 ## About
 
-<h3> testst esteststest </h3>
+<h4> testst esteststest </h4>
 	
 <!-- INSTALLATION -->
 ## Installation
