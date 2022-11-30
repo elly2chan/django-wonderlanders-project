@@ -76,6 +76,8 @@ pip install -r requirements.txt
 ```
 ***Note: If you are on a Mac, change "psycopg2" to "psycopg2-binary" in requirements.txt before running the command above!***
 
+<br>
+
 ***In order to use the app, you should change the following in settings.py:***
 
 ```python
