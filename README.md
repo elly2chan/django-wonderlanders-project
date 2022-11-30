@@ -76,7 +76,8 @@ pip install -r requirements.txt
 
 <br>
 
-***Next thing you should do is to configure your "settings.py" file****
+<h4>Next you should configure your "settings.py" file by either changing values below (like config['SECRET_KEY'])<br>
+or set them up in a .env file</h4>
 
 ***All of the values below (like config['SECRET_KEY']) can be changed to valid ones or you can set them up in a .env file***
 	
