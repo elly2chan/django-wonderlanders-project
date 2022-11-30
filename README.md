@@ -43,9 +43,21 @@ Final project for the Web Framework Course in Software University.<br>
 	   - You will have full CRUD for all of your created content
 	   - You can add and remove products from your cart
 	   - You will have access to the checkout page in case you want to place your order
-</h4>
 	
-	<h4>test  </h4>
+	3) Staff users:
+	   - Staff users have full CRUD functionalities for all of their created content
+	   - They can access the admin panel
+	   - They can add, edit and delete products and product categories
+	
+	4) Administrators
+	   - Administrators (or superusers) have full CRUD of all content in the website
+	   - They can add, edit and delete theirs and all user's posts
+	   - They can add, edit and delete post categories
+	   - They can add, edit and delete users, user groups, user permissions
+	   - They can add, edit and delete products and product categories
+	   - To summarize - superusers can do it all
+
+	</h4>
 	
 <!-- INSTALLATION -->
 ## Installation
