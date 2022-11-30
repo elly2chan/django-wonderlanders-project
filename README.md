@@ -68,7 +68,7 @@ Final project for the Web Framework Course in Software University.<br>
 ***First you should do two things:***
 
 ```bash
-git clone https://github.com/elly2chan/wonderlanders-django-project
+git clone https://github.com/elly2chan/django-wonderlanders-project
 ```
 	
 ```bash
