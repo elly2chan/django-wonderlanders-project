@@ -53,7 +53,7 @@ Final project for the Web Framework Course in Software University.<br>
    - They can add, edit and delete products and product categories
 
 4) Administrators
-   - Administrators (or superusers) have full CRUD of all content in the website
+   - Administrators (or superusers) have full CRUD for all content in the website
    - They can add, edit and delete theirs and all user's posts
    - They can add, edit and delete post categories
    - They can add, edit and delete users, user groups, user permissions
