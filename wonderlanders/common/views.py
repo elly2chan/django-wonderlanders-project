@@ -36,7 +36,3 @@ class ContactView(views.FormView):
         if self.request.user.is_authenticated:
             user = self.request.user
             return {'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}
-
-
-def error_404_view(request):
-    return render(request, 'common/page_not_found_404.html')
