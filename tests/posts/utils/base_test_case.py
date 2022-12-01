@@ -14,7 +14,7 @@ class BaseTestCase(TestCase):
 
         self.post = Post.objects.create(
             title="Test Delete Post",
-            image=tempfile.NamedTemporaryFile(suffix=".jpg").name,
+            photo=tempfile.NamedTemporaryFile(suffix=".jpg").name,
             destination='Wonderland',
             description='Test description',
             category=self.post_category,

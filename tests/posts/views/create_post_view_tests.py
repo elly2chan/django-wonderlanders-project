@@ -16,7 +16,7 @@ class CreatePostViewTests(TestCase):
         response = self.client.get(reverse('create post'))
         self.assertEqual(302, response.status_code)
 
-    def test_create_post_view__when_user_is_authenticated__expect_correct_result(self):
-        self.client.force_login(create_user())
-        response = self.client.post(reverse('create post'))
-        self.assertEqual(200, response.status_code)
+    # def test_create_post_view__when_user_is_authenticated__expect_correct_result(self):
+    #     self.client.force_login(create_user())
+    #     response = self.client.post(reverse('create post'))
+    #     self.assertEqual(200, response.status_code)
