@@ -25,21 +25,59 @@ Final project for the Web Framework Course in Software University.<br>
 
 <!-- ABOUT -->
 ## About
+
+<h4>
+	Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
+	It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br><br>
+	The functionalities for the different types of users are as follows: <br><br>
+
+1) For unregistered users:
+   - You can review all post categories and all pictures without accessing posts details
+   - You will have access to "About", "Contact" and "Products" pages
+   - In the "Products" page you will be able to see our products but to add them to your cart,
+     you will have to create an account
+   - You will have acces to "Login" and "Register" pages
+
+2) For registered users:
+   - You can review all posts, all post categories and all posts details
+   - You can access all pages in the website
+   - You will have full CRUD for all of your created content
+   - You can add and remove products from your cart
+   - You will have access to the checkout page in case you want to place your order
+
+3) Staff users:
+   - Staff users have full CRUD functionalities for all of their created content
+   - They can access the admin panel
+   - They can add, edit and delete products and product categories
+
+4) Administrators:
+   - Administrators (or superusers) have full CRUD for all content in the website
+   - They can add, edit and delete theirs and all user's posts
+   - They can add, edit and delete post categories
+   - They can add, edit and delete users, user groups, user permissions
+   - They can add, edit and delete products and product categories
+   - To summarize, superusers can do it all	:muscle::muscle::muscle:
+	
+</h4>
 	
 <!-- INSTALLATION -->
 ## Installation
 
-**First**
+<h4>First you should do two things:</h4>
+
 ```bash
-git clone https://github.com/elly2chan/wonderlanders-django-project
+git clone https://github.com/elly2chan/django-wonderlanders-project
 ```
-**Then**
+	
 ```bash
 pip install -r requirements.txt
 ```
 ***Note: If you are on a Mac, change "psycopg2" to "psycopg2-binary" in requirements.txt before running the command above!***
 
-## In order to use the app, you should change the following in settings.py:
+<br>
+
+<h4>Next you should configure your "settings.py" file by either changing values below (like config['SECRET_KEY'])<br>
+or setting them up in a .env file: </h4>
 
 ```python
 SECRET_KEY = config['SECRET_KEY'] # Change to a valid secret key or set it up in a .env file
@@ -49,8 +87,8 @@ DEBUG = bool(config['DEBUG']) # Change to True/False or set it up in a .env file
 ALLOWED_HOSTS = config['ALLOWED_HOSTS'].split(' ') # Change to valid hosts or set them in .env file
 ```
 
-Change database credentials to valid ones or set them up in a .env file and leave them as they are:
-
+<h4>Do the same for your database configuation:</h4>
+	
 ```python
 DATABASES = {
     'default': {
@@ -64,7 +102,7 @@ DATABASES = {
 }
 ```
 
-Or use the default database configuration:
+<h4>Or use the default database configuration:</h4>
 
 ```python
 DATABASES = {
@@ -74,8 +112,8 @@ DATABASES = {
     }
 }
 ```
-
-Set Redis Cache configuration (same as DB - change values to valid ones or set them up in .env file):
+	
+<h4>If you want to use cache, you can configure it as well:</h4>
 
 ```python
 CACHES = {
@@ -86,7 +124,7 @@ CACHES = {
 }
 ```
 
-Set Cloudinary configuration:
+<h4>Set Cloudinary configuration:</h4>
 
 ```python
 cloudinary.config(
@@ -134,5 +172,3 @@ cloudinary.config(
 ## License
 
 Distributed under the [MIT](https://github.com/elly2chan/wonderlanders-django-project/blob/main/LICENSE) License.
-
-<p align="left"><a href="#readme-top">Back to top</a></p>
