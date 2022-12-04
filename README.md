@@ -249,7 +249,7 @@ urlpatterns = (
 - [DjangoShoppingCart](https://pypi.org/project/django-shopping-cart/)
 - [FreeFrontend](https://freefrontend.com/)
 	
-And of course, lots of [StackOverflow](https://stackoverflow.com)
+And of course, lots of [StackOverflow](https://stackoverflow.com) :raised_hands:
 
 <!-- LICENSE -->
 ## License
