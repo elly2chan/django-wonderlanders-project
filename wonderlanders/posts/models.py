@@ -132,20 +132,6 @@ def photo_auto_delete(sender, instance, **kwargs):
     cloudinary.uploader.destroy(instance.photo.public_id)
 
 
-@receiver(post_save, sender=Post)
-def update_index_cache(sender, **kwargs):
-    if post_save:
-        cli = redis.Redis('localhost')
-        cli.flushall()
-
-
-@receiver(post_delete, sender=Post)
-def update_index_cache(sender, **kwargs):
-    if post_delete:
-        cli = redis.Redis('localhost')
-        cli.flushall()
-
-
 class PostComment(models.Model):
     MAX_COMMENT_LENGTH = 300
 
