@@ -42,7 +42,7 @@
             <div class="card-columns">
                 {% for post in posts %}
                     <div class="card card-pin">
-                        <img class="card-img" src="/media/{{ post.image }}" alt="Card image">
+                        <img class="card-img" src="{{ post.photo.url }}" alt="Card image">
                         <div class="overlay">
                             <div class="more">
                                 <b>{{ post.title }}</b>
