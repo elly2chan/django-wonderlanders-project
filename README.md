@@ -140,10 +140,89 @@ cloudinary.config(
 
 <h4>The application integrates the following urls for each application:</h4>
 
+<h4>Main urls:</h4>
+	
 ```python
-test
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('wonderlanders.common.urls')),
+    path('posts/', include('wonderlanders.posts.urls')),
+    path('profile/', include('wonderlanders.profiles.urls')),
+    path('products/', include('wonderlanders.products.urls')),
+    path('store/', include('wonderlanders.store.urls')),
+]
 ```
+<h4>Common:</h4>
+	
+```python
+urlpatterns = (
+    path('', IndexView.as_view(), name='index'),
+    path('about/', AboutView.as_view(), name='about'),
+    path('contact/', ContactView.as_view(), name='contact'),
+)
+```
+<h4>Posts:</h4>
+	
+```python
+urlpatterns = (
+    path('create/', CreatePostView.as_view(), name='create post'),
+    path('details/<int:pk>', PostDetailsView.as_view(), name='post details'),
+    path('category/<slug>', PostCategoryView.as_view(), name='post category'),
+    path('edit/<int:pk>', EditPostView.as_view(), name='edit post'),
+    path('delete/<int:pk>', DeletePostView.as_view(), name='delete post'),
+    path('comment/<int:pk>/', include([
+        path('', comment_post, name='comment post'),
+        path('delete/', delete_comment, name='delete comment'),
+    ])),
+)
+```
+<h4>Products:</h4>
+	
+```python
+urlpatterns = (
+    path('', ProductsView.as_view(), name='all products'),
+    path('add-product/', AddProductView.as_view(), name='add product'),
+    path('add-product-category/', AddProductCategoryView.as_view(), name='add product category'),
+    path('edit-product/<int:pk>', EditProductView.as_view(), name='edit product'),
+    path('delete-product/<int:pk>', DeleteProductView.as_view(), name='delete product'),
+    path('product-categories/', include([
+        path('', ProductCategories.as_view(), name='product categories'),
+        path('edit/<int:pk>', EditProductCategoryView.as_view(), name='edit product category'),
+        path('delete/<int:pk>', DeleteProductCategoryView.as_view(), name='delete product category'),
+    ])),
+)
 
+```
+<h4>Profiles:</h4>
+	
+```python
+urlpatterns = (
+    path('login/', LoginView.as_view(), name='login user'),
+    path('register/', RegisterView.as_view(), name='register user'),
+    path('logout/', LogoutView.as_view(), name='logout user'),
+    path('<int:pk>/', include([
+        path('', UserDetailsView.as_view(), name='details user'),
+        path('edit/', UserEditView.as_view(), name='edit user'),
+        path('delete/', UserDeleteView.as_view(), name='delete user'),
+    ])),
+)
+
+```
+<h4>Store:</h4>
+	
+```python
+urlpatterns = (
+    path('cart/add/<int:pk>/', cart_add, name='cart_add'),
+    path('cart/item_clear/<int:pk>/', item_clear, name='item_clear'),
+    path('cart/item_increment/<int:pk>/',
+         item_increment, name='item_increment'),
+    path('cart/item_decrement/<int:pk>/',
+         item_decrement, name='item_decrement'),
+    path('cart/cart_clear/', cart_clear, name='cart_clear'),
+    path('cart/cart-detail/', cart_detail, name='cart_detail'),
+    path('checkout/', CheckoutView.as_view(), name='checkout'),
+)
+```
 
 <!-- ROADMAP -->
 ## Roadmap
