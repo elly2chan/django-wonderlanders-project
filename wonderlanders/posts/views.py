@@ -12,7 +12,7 @@ from wonderlanders.posts.forms import CreatePostForm, EditPostForm, CommentForm
 from wonderlanders.posts.models import PostCategory, Post, PostComment
 
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(login_required(login_url='index', redirect_field_name=None), name='dispatch')
 class CreatePostView(views.CreateView):
     model = Post
     form_class = CreatePostForm
