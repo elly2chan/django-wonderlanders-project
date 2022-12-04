@@ -243,6 +243,12 @@ urlpatterns = (
 <!-- Credits -->
 ## Credits
 
+- [SoftwareUniversity](https://softuni.bg)
+- [SimpleIsBetterThanComplex](https://simpleisbetterthancomplex.com)
+- [DonchoMinkov](https://github.com/Minkov)
+- [DjangoShoppingCart](https://pypi.org/project/django-shopping-cart/)
+- [FreeFrontend](https://freefrontend.com/)
+
 <!-- LICENSE -->
 ## License
 
