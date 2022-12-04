@@ -12,17 +12,3 @@ class ContactForm(AddPlaceholdersFormMixin, RemoveLabelsFormMixin, AddStyleClass
         widgets = {
             'message': forms.Textarea(),
         }
-
-
-class SearchPostsForm(forms.Form):
-    MAX_SEARCH_LENGTH = 30
-    post_title = forms.CharField(
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Search...',
-            'style': 'max-width: 300px',
-        }),
-        max_length=MAX_SEARCH_LENGTH,
-        required=False,
-        label="",
-    )

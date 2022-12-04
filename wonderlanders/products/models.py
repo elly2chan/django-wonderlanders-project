@@ -1,10 +1,9 @@
 import cloudinary.uploader
 from cloudinary.models import CloudinaryField
 from django.contrib.auth import get_user_model
-from django.core.cache import cache
 from django.core.validators import MinLengthValidator
 from django.db import models
-from django.db.models.signals import pre_delete, post_save, post_delete
+from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from django.utils.text import slugify
 
