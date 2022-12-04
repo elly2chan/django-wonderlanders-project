@@ -35,7 +35,7 @@ The project is deployed in AWS. The storage used for saving photos, uploaded by 
 </p>
 <br>
 This is my first actual web project and here is the tech stack used so far:
-<br>
+<br><br>
 
 [![My Skills](https://skillicons.dev/icons?i=py,django,html,css,docker,github,postgres)](https://skillicons.dev)
 <br><br>
