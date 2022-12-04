@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% load cache %}
 
 {% block page_content %}
     <div class="container">
@@ -15,9 +16,11 @@
                     </p>
                 </form>
             </div>
-            <div class="col-md-7">
-                <img src="{% static 'img/contact.png' %}" alt="">
-            </div>
+            {% cache contact 360 %}
+                <div class="col-md-7">
+                    <img src="{% static 'img/contact.png' %}" alt="">
+                </div>
+            {% endcache %}
         </div>
     </div>
 {% endblock %}

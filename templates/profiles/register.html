@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% load cache %}
 
 {% block page_content %}
     <div class="container">
@@ -15,9 +16,11 @@
                 </form>
                 Have an account? <a href="{% url 'login user' %}">Log in</a>
             </div>
-            <div class="col-md-7">
-                <img src="{% static 'img/register.png' %}" width=350px height=350px alt="">
-            </div>
+            {% cache register 360 %}
+                <div class="col-md-7">
+                    <img src="{% static 'img/register.png' %}" width=350px height=350px alt="">
+                </div>
+            {% endcache %}
         </div>
     </div>
 {% endblock %}

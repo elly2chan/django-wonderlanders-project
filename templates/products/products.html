@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% load cache %}
 
 {% block page_content %}
     <div class="container">
@@ -64,11 +65,13 @@
                 <br>
             {% endfor %}
         {% else %}
-            <h1>Coming soon</h1>
-            <br><br><br>
-            <img src="{% static 'img/gifts.png' %}" width=600px height=300px
-                 alt="">
-            <br><br><br>
+            {% cache products 360 %}
+                <h1>Coming soon</h1>
+                <br><br><br>
+                <img src="{% static 'img/gifts.png' %}" width=600px height=300px
+                     alt="">
+                <br><br><br>
+            {% endcache %}
         {% endif %}
     </div>
 {% endblock %}
