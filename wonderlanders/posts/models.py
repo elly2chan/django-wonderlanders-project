@@ -1,4 +1,5 @@
 import cloudinary.uploader
+import redis
 from cloudinary.models import CloudinaryField
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
@@ -134,13 +135,15 @@ def photo_auto_delete(sender, instance, **kwargs):
 @receiver(post_save, sender=Post)
 def update_index_cache(sender, **kwargs):
     if post_save:
-        cache.clear()
+        cli = redis.Redis('localhost')
+        cli.flushall()
 
 
 @receiver(post_delete, sender=Post)
 def update_index_cache(sender, **kwargs):
     if post_delete:
-        cache.clear()
+        cli = redis.Redis('localhost')
+        cli.flushall()
 
 
 class PostComment(models.Model):
