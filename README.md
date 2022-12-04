@@ -13,7 +13,7 @@ Final project for the Web Framework Course in Software University.<br>
 <a href='https://wonderlanders.tk'> To see the demo click here </a>
 <br><br>
 	
-[About](#about) | [Installation](#installation) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
+[About](#about) | [Installation](#installation) | [Urls](#urls) | [Roadmap](#roadmap) | [Credits](#credits) | [License](#license)
 
 </h3>
 	 
@@ -138,7 +138,11 @@ cloudinary.config(
 <!-- URLS -->
 ## Urls
 
-The application integrates the following urls for each application:
+<h4>The application integrates the following urls for each application:</h4>
+
+```python
+test
+```
 
 
 <!-- ROADMAP -->
