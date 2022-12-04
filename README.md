@@ -32,7 +32,7 @@ It is a very simple, user-friendly website where you can create posts by uploadi
 The functionalities for the different types of users are as follows: <br><br>
 
 1) For unregistered users:
-   - You can review all post categories and all pictures without accessing posts details
+   * You can review all post categories and all pictures without accessing posts details
    - You will have access to "About", "Contact" and "Products" pages
    - In the "Products" page you will be able to see our products but to add them to your cart,
      you will have to create an account
