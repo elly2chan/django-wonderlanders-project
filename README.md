@@ -29,7 +29,7 @@ Final project for the Web Framework Course in Software University.<br>
 
 Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
 It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br>
-Here is a bit more about the way things work: <br><br>
+Here is a bit more about the way things work: <br><br><br>
 The site is accessible by non-authorized viewers with restricted access to post's details and products/cart functionalities.<br>
 Registered users have full CRUD of their content, as well as access to products, adding/removing products to cart and making orders.<br>
 There are also staff users that have the same permissions as all of the above, plus CRUD of all product settings. They can add, edit and delete<br>
