@@ -33,7 +33,9 @@
             {% for product in products %}
                 <div class=row style="width: 700px; border: 1px solid black">
                     <div class="flex-column">
-                        <img src="{{ product.image.url }}" width="400px" height="300px" alt="">
+                        {% cache 360 product_image %}
+                            <img src="{{ product.image.url }}" width="400px" height="300px" alt="">
+                        {% endcache %}
                     </div>
                     <div class="flex-column" style="padding: 30px" align="left">
                         <h4>
