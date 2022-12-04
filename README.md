@@ -28,7 +28,8 @@ Final project for the Web Framework Course in Software University.<br>
 
 <h4>Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
 It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br>
-This is my first web project made by using the following tech stack:</h4><br>
+This is my first web project made by using the following tech stack:</h4><br><br>
+	
 [![My Skills](https://skillicons.dev/icons?i=py,django,html,css,docker,github,postgres)](https://skillicons.dev)
 
 <!-- INSTALLATION -->
