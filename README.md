@@ -43,7 +43,7 @@ The site is fully functional. It has a lot of features, with the key ones listed
 This is my first actual web project and here is the tech stack used so far:
 <br><br>
 
-[![My Skills](https://skillicons.dev/icons?i=py,django,html,css,docker,github,postgres)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=py,django,html,css,docker,github,postgres,aws)](https://skillicons.dev)
 <br><br>
 For more information, you can also see the [Credits](#credits).
 	
