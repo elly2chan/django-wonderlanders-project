@@ -26,9 +26,9 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- ABOUT -->
 ## About
 
-<p>
-Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
-It is a very simple, user-friendly website where you can create posts by uploading photos and<br>
+<p align='justify'>
+Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.
+It is a very simple, user-friendly website where you can create posts by uploading photos and
 details about your journeys.<br><br>
 The site is fully functional. It has a lot of features, with the key ones listed below:<br><br>
  - It has a log in, log out system and a cart functionality.<br>
