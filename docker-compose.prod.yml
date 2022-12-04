@@ -8,6 +8,7 @@ services:
       - "6379:6379"
   postgres:
     image: postgres
+    #example credentials for postgres db
     environment:
       - POSTGRES_USER=softuni
       - POSTGRES_PASSWORD=softuni
