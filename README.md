@@ -248,6 +248,8 @@ urlpatterns = (
 - [DonchoMinkov](https://github.com/Minkov)
 - [DjangoShoppingCart](https://pypi.org/project/django-shopping-cart/)
 - [FreeFrontend](https://freefrontend.com/)
+	
+And of course, lots of [StackOverflow](https://stackoverflow.com)
 
 <!-- LICENSE -->
 ## License
