@@ -26,12 +26,17 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- ABOUT -->
 ## About
 
-<h4>Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.
-It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.
-This is my first web project made by using the following tech stack:</h4><br>
+<h4>Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
+It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br>
+The site is fully functional. It has a log in, log out system and a cart functionality.<br>
+There are three types of users - normal, staff and administrators.<br>
+The project is deployed in AWS. The storage used for saving photos, uploaded by users is Cloudinary.<br>
+This is my first actual web project and here is the tech stack used so far:</h4><br>
 	
 [![My Skills](https://skillicons.dev/icons?i=py,django,html,css,docker,github,postgres)](https://skillicons.dev)
-
+<br>
+For more information, you can also see the [Credits](#credits).
+	
 <!-- INSTALLATION -->
 ## Installation
 
