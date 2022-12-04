@@ -135,6 +135,12 @@ cloudinary.config(
 )
 ```
 
+<!-- URLS -->
+## Urls
+
+The application integrates the following urls for each application:
+
+
 <!-- ROADMAP -->
 ## Roadmap
 
