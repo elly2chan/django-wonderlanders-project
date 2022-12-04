@@ -28,35 +28,7 @@ Final project for the Web Framework Course in Software University.<br>
 
 
 Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
-It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br><br>
-The functionalities for the different types of users are as follows: <br><br>
-
-1) For unregistered users:
-   * You can review all post categories and all pictures without accessing posts details
-   - You will have access to "About", "Contact" and "Products" pages
-   - In the "Products" page you will be able to see our products but to add them to your cart,
-     you will have to create an account
-   - You will have acces to "Login" and "Register" pages
-
-2) For registered users:
-   - You can review all posts, all post categories and all posts details
-   - You can access all pages in the website
-   - You will have full CRUD for all of your created content
-   - You can add and remove products from your cart
-   - You will have access to the checkout page in case you want to place your order
-
-3) Staff users:
-   - Staff users have full CRUD functionalities for all of their created content
-   - They can access the admin panel
-   - They can add, edit and delete products and product categories
-
-4) Administrators:
-   - Administrators (or superusers) have full CRUD for all content in the website
-   - They can add, edit and delete theirs and all user's posts
-   - They can add, edit and delete post categories
-   - They can add, edit and delete users, user groups, user permissions
-   - They can add, edit and delete products and product categories
-   - To summarize, superusers can do it all	:muscle::muscle::muscle:
+It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.
 	
 	
 <!-- INSTALLATION -->
