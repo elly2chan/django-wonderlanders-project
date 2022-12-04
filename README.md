@@ -26,10 +26,10 @@ Final project for the Web Framework Course in Software University.<br>
 <!-- ABOUT -->
 ## About
 
-<h4>
-	Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
-	It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br><br>
-	The functionalities for the different types of users are as follows: <br><br>
+
+Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
+It is a very simple, user-friendly website where you can create posts by uploading photos and details about your journeys.<br><br>
+The functionalities for the different types of users are as follows: <br><br>
 
 1) For unregistered users:
    - You can review all post categories and all pictures without accessing posts details
@@ -58,7 +58,6 @@ Final project for the Web Framework Course in Software University.<br>
    - They can add, edit and delete products and product categories
    - To summarize, superusers can do it all	:muscle::muscle::muscle:
 	
-</h4>
 	
 <!-- INSTALLATION -->
 ## Installation
