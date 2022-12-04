@@ -16,7 +16,7 @@
                 </form>
                 Don't have an account? <a href="{% url 'register user' %}">Register</a>
             </div>
-            {% cache login 360 %}
+            {% cache 360 login %}
                 <div class="col-md-7">
                     <img src="{% static 'img/login.jpeg' %}" alt="">
                 </div>

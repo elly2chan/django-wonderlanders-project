@@ -65,7 +65,7 @@
                 <br>
             {% endfor %}
         {% else %}
-            {% cache products 360 %}
+            {% cache 360 products %}
                 <h1>Coming soon</h1>
                 <br><br><br>
                 <img src="{% static 'img/gifts.png' %}" width=600px height=300px
