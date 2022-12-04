@@ -30,9 +30,12 @@ Final project for the Web Framework Course in Software University.<br>
 Wonderlanders is a project inspired by the world around us and our endless opportunities to explore it.<br>
 It is a very simple, user-friendly website where you can create posts by uploading photos and<br>
 details about your journeys.<br>
-The site is fully functional.<br>
+The site is fully functional. It has a lot of features, with the key ones listed below:<br>
  - It has a log in, log out system and a cart functionality.<br>
  - There are three types of users - normal, staff and administrators.<br>
+ - It has a public part, accessible by both authorized and non-authorized viewers.<br>
+ - It has a private part - functionalities that only authorized users can use.<br>
+ - Some of the features of the private part are usable only by staff and superusers.<br>
  - The project is deployed in AWS.<br>
  - The storage used for saving photos, uploaded by users is Cloudinary.<br>
 </p>
