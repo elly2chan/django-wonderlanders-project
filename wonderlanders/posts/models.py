@@ -15,7 +15,7 @@ UserModel = get_user_model()
 
 class PostCategory(models.Model):
     class Meta:
-        verbose_name_plural = 'Post Categories'
+        verbose_name_plural = 'Post categories'
 
     MAX_TITLE_LENGTH = 15
     MIN_TITLE_LENGTH = 3
