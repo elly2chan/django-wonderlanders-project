@@ -1,4 +1,6 @@
 from django.contrib.admin.views.decorators import staff_member_required
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views import generic as views
@@ -13,8 +15,13 @@ class ProductsView(views.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['products'] = Product.objects.all()
-        context['categories'] = ProductCategory.objects.all()
+
+        try:
+            context['products'] = Product.objects.all()
+            context['categories'] = ProductCategory.objects.all()
+        except ObjectDoesNotExist:
+            raise Http404
+
         return context
 
 

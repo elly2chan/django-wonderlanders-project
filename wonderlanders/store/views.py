@@ -1,4 +1,6 @@
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views import generic as views
@@ -12,7 +14,12 @@ from wonderlanders.store.forms import CheckoutForm
 @login_required(login_url='index', redirect_field_name=None)
 def cart_add(request, pk):
     cart = Cart(request)
-    product = Product.objects.get(pk=pk)
+
+    try:
+        product = Product.objects.get(pk=pk)
+    except ObjectDoesNotExist:
+        raise Http404
+
     cart.add(product=product)
     return redirect("cart_detail")
 
@@ -20,7 +27,12 @@ def cart_add(request, pk):
 @login_required(login_url='index', redirect_field_name=None)
 def item_clear(request, pk):
     cart = Cart(request)
-    product = Product.objects.get(pk=pk)
+
+    try:
+        product = Product.objects.get(pk=pk)
+    except ObjectDoesNotExist:
+        raise Http404
+
     cart.remove(product)
     return redirect("cart_detail")
 
@@ -28,7 +40,12 @@ def item_clear(request, pk):
 @login_required(login_url='index', redirect_field_name=None)
 def item_increment(request, pk):
     cart = Cart(request)
-    product = Product.objects.get(pk=pk)
+
+    try:
+        product = Product.objects.get(pk=pk)
+    except ObjectDoesNotExist:
+        raise Http404
+
     cart.add(product=product)
     return redirect("cart_detail")
 
@@ -36,7 +53,11 @@ def item_increment(request, pk):
 @login_required(login_url='index', redirect_field_name=None)
 def item_decrement(request, pk):
     cart = Cart(request)
-    product = Product.objects.get(pk=pk)
+    try:
+        product = Product.objects.get(pk=pk)
+    except ObjectDoesNotExist:
+        raise Http404
+
     for key, value in cart.cart.items():
         if key == str(product.id):
 
@@ -70,7 +91,10 @@ def cart_detail(request):
 
     total_price_with_vat = cart_total_price * 1.2
 
-    products = Product.objects.all()
+    try:
+        products = Product.objects.all()
+    except ObjectDoesNotExist:
+        raise Http404
 
     context = {
         'cart_info': cart_info,

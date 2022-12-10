@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
+from django.http import Http404
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -49,7 +51,12 @@ class UserDetailsView(AccountOwnerRequiredMixin, views.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        posts = Post.objects.filter(user_id=self.request.user.id).order_by('id')
+
+        try:
+            posts = Post.objects.filter(user_id=self.request.user.id).order_by('id')
+        except ObjectDoesNotExist:
+            raise Http404
+
         page = self.request.GET.get('page')
         context['posts'] = Paginator(posts, 30).get_page(page)
         context['posts_count'] = posts.count()

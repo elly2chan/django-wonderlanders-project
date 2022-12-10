@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
-from django.http import HttpResponseNotFound
+from django.http import Http404
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -37,13 +37,12 @@ class PostDetailsView(views.DetailView):
         context = super().get_context_data(**kwargs)
 
         try:
-            Post.objects.filter(pk=self.object.pk)
+            context['category'] = PostCategory.objects.filter(id=self.object.category_id)
+            context['category_posts'] = Post.objects.filter(category=self.object.category).exclude(id=self.object.id)
+            context['post_comments'] = PostComment.objects.filter(post_id=self.object.id)
         except ObjectDoesNotExist:
-            return HttpResponseNotFound()
+            raise Http404
 
-        context['category'] = PostCategory.objects.filter(id=self.object.category_id)
-        context['category_posts'] = Post.objects.filter(category=self.object.category).exclude(id=self.object.id)
-        context['post_comments'] = PostComment.objects.filter(post_id=self.object.id)
         context['last_comment'] = context['post_comments'].last()
         context['form'] = CommentForm()
         return context
@@ -58,14 +57,18 @@ class PostCategoryView(views.DetailView):
         context = super().get_context_data(**kwargs)
 
         try:
-            Post.objects.filter(pk=self.object.pk)
+            posts = Post.objects.filter(category_id=self.object.id).order_by('id').reverse()
         except ObjectDoesNotExist:
-            return HttpResponseNotFound()
+            raise Http404
 
-        posts = Post.objects.filter(category_id=self.object.id).order_by('id').reverse()
         page = self.request.GET.get('page')
         context['posts'] = Paginator(posts, 30).get_page(page)
-        context['categories'] = PostCategory.objects.all()
+
+        try:
+            context['categories'] = PostCategory.objects.all()
+        except ObjectDoesNotExist:
+            raise Http404
+
         return context
 
 
@@ -90,8 +93,12 @@ class DeletePostView(PostAuthorRequiredMixin, views.DeleteView):
 
 @login_required
 def comment_post(request, pk):
-    post = Post.objects.filter(pk=pk) \
-        .get()
+
+    try:
+        post = Post.objects.filter(pk=pk) \
+            .get()
+    except ObjectDoesNotExist:
+        raise Http404
 
     form = CommentForm(request.POST)
 
@@ -106,10 +113,11 @@ def comment_post(request, pk):
 
 @login_required
 def delete_comment(request, pk):
+
     try:
         comment = PostComment.objects.filter(pk=pk).get()
     except ObjectDoesNotExist:
-        return HttpResponseNotFound()
+        raise Http404
 
     if comment.user == request.user or request.user.is_superuser:
         comment.delete()

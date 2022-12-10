@@ -1,6 +1,8 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views import generic as views
+from django.http import Http404
 
 from wonderlanders.common.forms import ContactForm
 from wonderlanders.common.models import Contact
@@ -12,7 +14,12 @@ class IndexView(views.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        posts = Post.objects.all().order_by('id').reverse()
+
+        try:
+            posts = Post.objects.all().order_by('id').reverse()
+        except ObjectDoesNotExist:
+            return Http404
+
         page = self.request.GET.get('page')
         context['posts'] = Paginator(posts, 30).get_page(page)
         context['categories'] = PostCategory.objects.all()

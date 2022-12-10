@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/page_not_found_404.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/app.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <div id="main">
+    	<div class="fof">
+            <h1>Error 500</h1>
+            <h3>Something went wrong. Click the button below to go back to wonderland.</h3>
+            <img src="{% static 'img/page_not_found_404.png' %}" height="300px" alt="">
+            <p>
+                <br>
+                <a href="{% url 'index' %}">
+                    <button type="button" class="btn btn-secondary">Travel back</button>
+                </a>
+            </p>
+    	</div>
+    </div>
+</div>
+</body>
+</html>
