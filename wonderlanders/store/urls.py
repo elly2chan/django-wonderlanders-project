@@ -1,7 +1,7 @@
 from django.urls import path
 
 from wonderlanders.store.views import cart_add, item_clear, item_increment, item_decrement, cart_clear, cart_detail, \
-    CheckoutView
+    CheckoutView, CheckoutSuccessView
 
 urlpatterns = (
     path('cart/add/<int:pk>/', cart_add, name='cart_add'),
@@ -13,4 +13,5 @@ urlpatterns = (
     path('cart/cart_clear/', cart_clear, name='cart_clear'),
     path('cart/cart-detail/', cart_detail, name='cart_detail'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
+    path('checkout-succcess/', CheckoutSuccessView.as_view(), name='checkout success')
 )

@@ -42,7 +42,6 @@ class ContactView(views.FormView):
 
     def form_valid(self, form):
         self.request.session['submit_redirect'] = True
-        print(self.request.session['submit_redirect'])
         form.save()
         return redirect('contact submitted')
 
@@ -56,4 +55,4 @@ class ContactSubmittedView(views.TemplateView):
             del self.request.session['submit_redirect']
             return self.render_to_response(context)
         else:
-            raise Http404
+            return redirect('index')

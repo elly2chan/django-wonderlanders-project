@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views import generic as views
 from cart.cart import Cart
+from django.views.generic import TemplateView
 
 from wonderlanders.common.context_processors import cart_details
 from wonderlanders.products.models import Product
@@ -106,19 +107,38 @@ def cart_detail(request):
 
 
 @method_decorator(login_required(login_url='index', redirect_field_name=None), name='dispatch')
-class CheckoutView(views.CreateView):
+class CheckoutView(views.FormView):
     template_name = 'store/checkout.html'
     form_class = CheckoutForm
 
+    def get(self, request, *args, **kwargs):
+        if self.request.user.is_staff or cart_details(self.request)['cart_products_count'] == 0:
+            raise Http404
+        context = self.get_context_data()
+        return self.render_to_response(context)
+
     def form_valid(self, form):
+        self.request.session['checkout_success_redirect'] = True
         checkout = form.save(commit=False)
         checkout.user = self.request.user
         checkout.order_total_price = cart_details(self.request)['cart_total_price_with_vat']
         checkout.order_products_quantity = cart_details(self.request)['cart_products_count']
         cart_clear(self.request)
         checkout.save()
-        return render(self.request, 'store/successful_checkout.html')
+        return redirect('checkout success')
 
     def get_initial(self):
         user = self.request.user
         return {'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}
+
+
+class CheckoutSuccessView(views.TemplateView):
+    template_name = 'store/successful_checkout.html'
+
+    def get(self, request, *args, **kwargs):
+        if 'checkout_success_redirect' in self.request.session:
+            context = self.get_context_data(**kwargs)
+            del self.request.session['checkout_success_redirect']
+            return self.render_to_response(context)
+        else:
+            return redirect('index')
