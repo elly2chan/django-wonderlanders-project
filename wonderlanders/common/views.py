@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views import generic as views
 from django.http import Http404
 
@@ -18,7 +18,7 @@ class IndexView(views.TemplateView):
         try:
             posts = Post.objects.all().order_by('id').reverse()
         except ObjectDoesNotExist:
-            return Http404
+            raise Http404
 
         page = self.request.GET.get('page')
         context['posts'] = Paginator(posts, 30).get_page(page)
@@ -35,11 +35,25 @@ class ContactView(views.FormView):
     form_class = ContactForm
     template_name = 'common/contact.html'
 
-    def form_valid(self, form):
-        form.save()
-        return render(self.request, 'common/contact_submitted.html')
-
     def get_initial(self):
         if self.request.user.is_authenticated:
             user = self.request.user
             return {'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}
+
+    def form_valid(self, form):
+        self.request.session['submit_redirect'] = True
+        print(self.request.session['submit_redirect'])
+        form.save()
+        return redirect('contact submitted')
+
+
+class ContactSubmittedView(views.TemplateView):
+    template_name = 'common/contact_submitted.html'
+
+    def get(self, request, *args, **kwargs):
+        if 'submit_redirect' in self.request.session:
+            context = self.get_context_data(**kwargs)
+            del self.request.session['submit_redirect']
+            return self.render_to_response(context)
+        else:
+            raise Http404
