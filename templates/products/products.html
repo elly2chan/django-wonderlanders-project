@@ -51,7 +51,7 @@
                         {% else %}
                             <a href="{% url 'login user' %}" class="btn btn-secondary">Add to cart</a>
                         {% endif %}
-                        {% if user.is_authenticated and user.is_superuser or request.user == post.user %}
+                        {% if user.is_authenticated and user.is_staff %}
                             &nbsp&nbsp&nbsp&nbsp
                             <a href="{% url 'edit product' pk=product.pk %}" style="color: white">
                                 <img src="{% static 'img/edit-pen-icon-6.jpg' %}" width="25px" height="25px" alt="">
