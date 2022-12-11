@@ -13,5 +13,5 @@ urlpatterns = (
     path('cart/cart_clear/', cart_clear, name='cart_clear'),
     path('cart/cart-detail/', cart_detail, name='cart_detail'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
-    path('checkout-succcess/', CheckoutSuccessView.as_view(), name='checkout success')
+    path('checkout-succcess/', CheckoutSuccessView.as_view(), name='checkout success'),
 )

@@ -6,5 +6,5 @@ urlpatterns = (
     path('', IndexView.as_view(), name='index'),
     path('about/', AboutView.as_view(), name='about'),
     path('contact/', ContactView.as_view(), name='contact'),
-    path('contact-submitted/', ContactSubmittedView.as_view(), name='contact submitted')
+    path('contact-submitted/', ContactSubmittedView.as_view(), name='contact submitted'),
 )
