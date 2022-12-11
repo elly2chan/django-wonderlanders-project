@@ -22,7 +22,12 @@ class IndexView(views.TemplateView):
 
         page = self.request.GET.get('page')
         context['posts'] = Paginator(posts, 30).get_page(page)
-        context['categories'] = PostCategory.objects.all()
+
+        try:
+            context['categories'] = PostCategory.objects.all()
+        except ObjectDoesNotExist:
+            raise Http404
+
         return context
 
 

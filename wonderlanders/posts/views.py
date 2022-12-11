@@ -13,7 +13,7 @@ from wonderlanders.posts.models import PostCategory, Post, PostComment
 
 
 @method_decorator(login_required(login_url='index', redirect_field_name=None), name='dispatch')
-class CreatePostView(views.CreateView):
+class CreatePostView(views.FormView):
     model = Post
     form_class = CreatePostForm
     template_name = 'posts/create_post.html'

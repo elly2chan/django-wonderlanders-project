@@ -5,7 +5,6 @@ from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views import generic as views
 from cart.cart import Cart
-from django.views.generic import TemplateView
 
 from wonderlanders.common.context_processors import cart_details
 from wonderlanders.products.models import Product
@@ -54,6 +53,7 @@ def item_increment(request, pk):
 @login_required(login_url='index', redirect_field_name=None)
 def item_decrement(request, pk):
     cart = Cart(request)
+
     try:
         product = Product.objects.get(pk=pk)
     except ObjectDoesNotExist:
@@ -61,12 +61,12 @@ def item_decrement(request, pk):
 
     for key, value in cart.cart.items():
         if key == str(product.id):
-
             if value['quantity'] > 1:
                 value['quantity'] = value['quantity'] - 1
             else:
                 cart.remove(product)
             cart.save()
+
             return redirect('cart_detail')
 
 
@@ -87,6 +87,7 @@ def get_cart_info(request):
 def cart_detail(request):
     cart_info = get_cart_info(request)
     cart_total_price = 0
+
     for key, value in cart_info:
         cart_total_price += value['quantity'] * float(value['price'])
 
@@ -103,6 +104,7 @@ def cart_detail(request):
         'total_price_with_vat': total_price_with_vat,
         'products': products,
     }
+
     return render(request, 'store/cart.html', context)
 
 
