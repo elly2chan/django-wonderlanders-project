@@ -252,7 +252,7 @@ urlpatterns = (
 - [FreeFrontend](https://freefrontend.com/)
 - [UnCSS](https://uncss-online.com)	
 	
-And of course, lots of [StackOverflow](https://stackoverflow.com) :raised_hands:
+And of course, lots of [StackOverflow](https://stackoverflow.com) help :raised_hands:
 
 <!-- LICENSE -->
 ## License
