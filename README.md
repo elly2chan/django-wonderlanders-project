@@ -250,9 +250,10 @@ urlpatterns = (
 - [DonchoMinkov](https://github.com/Minkov)
 - [DjangoShoppingCart](https://pypi.org/project/django-shopping-cart/)
 - [FreeFrontend](https://freefrontend.com/)
-- [UnCSS](https://uncss-online.com)	
+- [UnCSS](https://uncss-online.com)
+- [DjangoHideAdmin](https://github.com/catcombo/django-hide-admin)
 	
-And of course, lots of [StackOverflow](https://stackoverflow.com) help :raised_hands:
+And of course, lots of help from [StackOverflow](https://stackoverflow.com) :raised_hands:
 
 <!-- LICENSE -->
 ## License
