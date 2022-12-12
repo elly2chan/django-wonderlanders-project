@@ -4,6 +4,7 @@ certifi==2022.9.24
 charset-normalizer==2.1.1
 cloudinary==1.30.0
 Django==4.1.3
+django-hide-admin==1.0.0
 django-shopping-cart==0.1
 gunicorn==20.1.0
 idna==3.4
