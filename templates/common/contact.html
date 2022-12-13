@@ -2,13 +2,14 @@
 {% load static %}
 {% load cache %}
 
+
 {% block page_content %}
     <div class="container">
         <br>
         <h1>Contact Us</h1>
         <div class="row">
             <div class="col-md-5">
-                <form action="" method="POST">
+                <form action="{% url 'contact' %}" method="POST" id="contact_form">
                     {{ form.as_p }}
                     {% csrf_token %}
                     <p>
