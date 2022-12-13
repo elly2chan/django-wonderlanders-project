@@ -11,11 +11,11 @@
             <div class="col-md-11" align="center">
                 <br>
                 <img src="{{ product.image.url }}" width="400px" height="300px" alt="">
-                <form action="{% url 'delete product' pk=product.pk %}" method="POST">
+                <form id="form" action="{% url 'delete product' pk=product.pk %}" method="POST">
                     <br>
                     {{ form.as_p }}
                     <p>
-                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Yes</button>
                         <a class="btn btn-secondary" href="{% url 'all products' %}">Go Back</a>
                     </p>
                     {% csrf_token %}

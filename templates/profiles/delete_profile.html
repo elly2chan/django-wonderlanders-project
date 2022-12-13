@@ -10,10 +10,10 @@
             </h3>
             <div class="col-md-11">
                 <br>
-                <form action="" method="POST">
+                <form id="form" action="{% url 'delete user' pk=request.user.pk %}" method="POST">
                     {{ form.as_p }}
                     <p>
-                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Yes</button>
                         <a class="btn btn-secondary" href="{% url 'details user' pk=request.user.pk %}">Go Back</a>
                         {% csrf_token %}
                 </form>

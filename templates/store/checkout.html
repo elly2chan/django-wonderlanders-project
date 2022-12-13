@@ -7,11 +7,11 @@
         <h1>Checkout</h1>
         <div class="row">
             <div class="col-md-5">
-                <form action="{% url 'checkout' %}" method="POST">
+                <form id="form" action="{% url 'checkout' %}" method="POST">
                     {{ form.as_p }}
                     {% csrf_token %}
                     <p>
-                        <button type="submit" class="btn btn-secondary">Checkout</button>
+                        <button id="submit" type="submit" class="btn btn-secondary">Checkout</button>
                         <a href="{% url 'cart_detail' %}">
                             <button type="button" class="btn btn-secondary" data-mdb-toggle="tooltip">
                                 Go Back

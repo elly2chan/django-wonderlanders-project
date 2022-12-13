@@ -8,10 +8,10 @@
         <br>
         <div class="row">
             <div class="col-md-5">
-                <form action="" method="POST">
+                <form id="form" action="{% url 'edit user' pk=request.user.pk %}" method="POST">
                     {{ form.as_p }}
                     <p>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                         <a class="btn btn-secondary" href="{% url 'details user' pk=request.user.pk %}">Go Back</a>
                     </p>
                     {% csrf_token %}

@@ -11,11 +11,11 @@
             </div>
             <div class="col-md-7" align="justify">
                 <br><br>
-                <form action="{% url 'edit post' pk=post.pk %}" method="post">
+                <form id="form" action="{% url 'edit post' pk=post.pk %}" method="post">
                     {{ form.as_p }}
                     {% csrf_token %}
                     <p>
-                        <button type="submit" class="btn btn-primary">Edit Post</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Edit Post</button>
                         <a href="{% url 'post details' pk=post.pk %}" class="btn btn-secondary">Go Back</a>
                     </p>
                 </form>

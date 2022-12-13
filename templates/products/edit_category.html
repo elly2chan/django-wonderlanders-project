@@ -8,12 +8,12 @@
             <h1>Edit Product Category {{ productcategory.title }}</h1>
             <div class="col-md-11" align="center">
                 <br>
-                <form action="{% url 'edit product category' pk=productcategory.pk %}" method="post">
+                <form id="form" action="{% url 'edit product category' pk=productcategory.pk %}" method="post">
                     {{ form.as_p }}
                     {% csrf_token %}
                     <br>
                     <p>
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Edit</button>
                         <a href="{% url 'product categories' %}" class="btn btn-secondary">Go Back</a>
                     </p>
                 </form>

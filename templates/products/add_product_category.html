@@ -7,11 +7,11 @@
             <div class="col-md-5">
                 <br><br><br><br><br><br><br><br><br>
                 <h1>Add category</h1>
-                <form action="{% url 'add product category' %}" method="POST">
+                <form id="form" action="{% url 'add product category' %}" method="POST">
                     {{ form.as_p }}
                     {% csrf_token %}
                     <p>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                         <a href="{% url 'all products' %}" class="btn btn-secondary">Go Back</a>
                     </p>
                 </form>

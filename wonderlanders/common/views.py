@@ -45,9 +45,8 @@ class ContactView(views.FormView):
             user = self.request.user
             return {'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email}
 
-    def form_valid(self, form):
+    def post(self, request, *args, **kwargs):
         self.request.session['submit_redirect'] = True
-        form.save()
         return redirect('contact submitted')
 
 

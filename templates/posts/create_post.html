@@ -7,11 +7,11 @@
         <h1>Create post</h1>
         <div class="row">
             <div class="col-md-5">
-                <form action="{% url 'create post' %}" method="POST" enctype="multipart/form-data">
+                <form id="form" action="{% url 'create post' %}" method="POST" enctype="multipart/form-data">
                     {{ form.as_p }}
                     {% csrf_token %}
                     <p>
-                        <button type="submit" class="btn btn-secondary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-secondary">Submit</button>
                     </p>
                 </form>
             </div>
