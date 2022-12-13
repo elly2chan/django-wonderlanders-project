@@ -22,10 +22,7 @@ class CreatePostView(views.FormView):
         post = form.save(commit=False)
         post.user = self.request.user
         post.save()
-        return super(CreatePostView, self).form_valid(form)
-
-    def get_success_url(self):
-        return reverse_lazy('index')
+        return redirect('index')
 
 
 @method_decorator(login_required(login_url='index', redirect_field_name=None), name='dispatch')
