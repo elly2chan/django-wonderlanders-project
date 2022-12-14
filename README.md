@@ -238,7 +238,6 @@ urlpatterns = (
 - [x] When validating data, show appropriate messages to the user
 - [x] Security (prevent SQL injection, XSS, CSRF, parameter tampering, etc)
 - [x] Write tests (Unit & Integration) for your views/models/forms - at least 10 test
-- [ ] Writing asynchronous view/s somewhere in the project
 - [x] Host the application in a cloud environment
 - [x] Extend Django User
 
