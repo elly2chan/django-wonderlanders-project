@@ -8,7 +8,7 @@ from django.dispatch import receiver
 from django.utils.text import slugify
 
 
-from wonderlanders.core.validators import name_and_title_validator
+from wonderlanders.core.validators import name_and_title_validator, validate_file_size
 
 UserModel = get_user_model()
 
@@ -80,6 +80,7 @@ class Post(models.Model):
     photo = CloudinaryField(
         folder='mediafiles/post_photos',
         public_id=get_photo_name_by_post_name,
+        validators=(validate_file_size, ),
         null=False,
         blank=False,
     )
