@@ -1,7 +1,7 @@
 <div align="center">
 <p align=center>
 <a href="https://softuni.bg">
-<img src="http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png" alt="Logo" width="600">
+<img src="https://codeweek-s3.s3.amazonaws.com/event_picture/SoftUni-Logo-Flat.png" alt="Logo" width="600">
 </a>
 <p>
 <br><br>
