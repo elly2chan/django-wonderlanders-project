@@ -19,9 +19,7 @@ Final project for the Web Framework Course in Software University.<br>
 	 
 </div>
 
- <a href="https://wonderlanders.tk">
  <img src="https://i.postimg.cc/Y2WCpxFB/Screenshot-2022-11-22-at-16-25-44.png" alt="Demo">
- </a
 
 <!-- ABOUT -->
 ## About
