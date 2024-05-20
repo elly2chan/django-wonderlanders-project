@@ -235,7 +235,7 @@ urlpatterns = (
 - [x] Make sure the role management is secured and error-safe
 - [x] When validating data, show appropriate messages to the user
 - [x] Security (prevent SQL injection, XSS, CSRF, parameter tampering, etc)
-- [x] Write tests (Unit & Integration) for your views/models/forms - at least 10 test
+- [x] Write tests (Unit & Integration) for your views/models/forms - at least 10 tests
 - [x] Host the application in a cloud environment
 - [x] Extend Django User
 
