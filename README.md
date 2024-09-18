@@ -18,8 +18,7 @@ Final project for the Web Framework Course in Software University.<br>
 </h3>
 	 
 </div>
-
- <img src="https://ibb.co/rZpqYh7" alt="Demo">
+<img src="https://i.ibb.co/MR1KrH2/Screenshot-2022-11-22-at-16-25-44.png" alt="Screenshot-2022-11-22-at-16-25-44" border="0"></a>
 
 <!-- ABOUT -->
 ## About
